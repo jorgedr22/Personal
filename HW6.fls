@@ -1,8 +1,8 @@
-PWD /Users/jorgedelriocuriel/Downloads
+PWD /Users/jorgedelriocuriel/Desktop/Papis-work
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/jorgedelriocuriel/Downloads/HW6.tex
+INPUT /Users/jorgedelriocuriel/Desktop/Papis-work/HW6.tex
 OUTPUT HW6.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
