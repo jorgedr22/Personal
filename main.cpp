@@ -20,6 +20,7 @@ int main() {
       }
       catch (runtime_error& excpt) {
          cout << "Error: " << excpt.what() << endl;
+         cout<<<<endl;
       }
    }
 
