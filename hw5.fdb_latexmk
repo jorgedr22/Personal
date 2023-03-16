@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1678913369 "/Users/jorgedelriocuriel/Desktop/Personal/hw5.tex" "hw5.pdf" "hw5" 1678913370
-  "/Users/jorgedelriocuriel/Desktop/Personal/hw5.tex" 1678913368 1687 bc2a001972b99513e13a72332943c11f ""
+["pdflatex"] 1678952675 "/Users/jorgedelriocuriel/Desktop/Personal/hw5.tex" "hw5.pdf" "hw5" 1678952675
+  "/Users/jorgedelriocuriel/Desktop/Personal/hw5.tex" 1678952674 1687 bc2a001972b99513e13a72332943c11f ""
   "/Users/jorgedelriocuriel/Downloads/vd.png" 1678912115 1886280 775e52550bf8627c34823743aa10253a ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -61,8 +61,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1678847806 2826448 2bd3dcd538b65c6a5254926afd940c12 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "hw5.aux" 1678913369 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "hw5.tex" 1678913368 1687 bc2a001972b99513e13a72332943c11f ""
+  "hw5.aux" 1678952675 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "hw5.tex" 1678952674 1687 bc2a001972b99513e13a72332943c11f ""
   (generated)
   "hw5.aux"
   "hw5.log"
