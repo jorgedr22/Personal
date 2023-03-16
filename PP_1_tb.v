@@ -1,4 +1,7 @@
 `timescale 1ns / 1ps
+
+`include "PP_1.v"
+
 module PP_1_tb();
 reg x,y,Rst,Clk;
 wire q;
@@ -24,8 +27,5 @@ begin
     
     @(posedge Clk); 
     #50 x<=0;y<=0;
-
-
 end
-
 endmodule
