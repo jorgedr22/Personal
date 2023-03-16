@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module PP_1(x,y,Rst,Clk,q);
 input x,y,Rst,Clk;
 output reg q;
