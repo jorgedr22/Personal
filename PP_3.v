@@ -2,8 +2,8 @@ module PP_3(w,z,Rst,Clk);
     input w,Rst,Clk;
     output reg z;
 
-    reg [7:0]State;
-    localparam[3:0] = s0=0,s1=1,s2=2,s3=3,s4=4,s5=5,s6=6,s7=7;
+    reg [3:0]State;
+    localparam[3:0] s0=0,s1=1,s2=2,s3=3,s4=4,s5=5,s6=6;
 
 always @(posedge Clk) begin
     if (Rst) begin
@@ -54,7 +54,7 @@ always @(posedge Clk) begin
                     State=s0;
                 end
                 else if (w) begin
-                    State=s6;
+                    State=s1;
                 end                
             end
 
@@ -68,15 +68,6 @@ always @(posedge Clk) begin
             end
 
             s6:begin
-                if (~w) begin
-                    State=s2;
-                end
-                else if (w) begin
-                    State=s7;
-                end                
-            end
-
-            s7:begin
                 if (~w) begin
                     State=s2;
                 end
