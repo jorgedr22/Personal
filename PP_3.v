@@ -31,27 +31,57 @@ always @(posedge Clk) begin
             end 
 
             s2:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             s3:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             s4:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             s5:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             s6:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             s7:begin
-                
+                if (~w) begin
+                    State=s2;
+                end
+                else if (w) begin
+                    State=s5;
+                end                
             end
 
             default: 
