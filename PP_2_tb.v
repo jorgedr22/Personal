@@ -34,7 +34,6 @@ initial begin
     //$display("%d",B);
         
     @(posedge Clk);
-    #50 Rst=1;B=0;
     //$display("%d",B);
     
     @(posedge Clk);

@@ -38,12 +38,12 @@ output reg w;
                         State=S2;
                     end
                     else if (~B) begin
+                        w=1;
                         State=S3;
                     end
                 end
 
                 S3:begin
-                    w=1;
                     if (B) begin
                         State=S1;
                     end
@@ -55,6 +55,7 @@ output reg w;
                 S4:begin
                     w=0;
                     if (B) begin
+                        w=1;
                         State=S5;
                     end
                     else if (~B) begin
@@ -63,7 +64,6 @@ output reg w;
                 end
 
                 S5:begin
-                    w=1;
                     if (B) begin
                         State=S1;
                     end
