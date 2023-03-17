@@ -1,5 +1,5 @@
 module PP_6(a,b,y,Rst,Clk);
-    input a,b;
+    input a,b,Rst,Clk;
     output reg y;
 
     reg [2:0]state;
