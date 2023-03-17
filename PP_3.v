@@ -51,12 +51,10 @@ always @(posedge Clk) begin
 
             s4:begin
                 if (~w) begin
-                    z=0;
-                    State=s2;
+                    State=s0;
                 end
                 else if (w) begin
-                    z=0;
-                    State=s5;
+                    State=s1;
                 end                
             end
 
