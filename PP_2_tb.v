@@ -19,35 +19,35 @@ initial begin
     $dumpvars(0,PP_2_tb);
 
     Rst=1;B=0;
-    $display("%d",B);
+    //$display("%d",B);
     
     @(posedge Clk);
     #50 Rst=0;B=1;
-    $display("%d",B);
+    //$display("%d",B);
 
     @(posedge Clk);
     #50 Rst=0;B=1;
-    $display("%d",B);
+    //$display("%d",B);
     
     @(posedge Clk);
     #50 Rst=0;B=0;
-    $display("%d",B);
+    //$display("%d",B);
         
     @(posedge Clk);
     #50 Rst=1;B=0;
-    $display("%d",B);
+    //$display("%d",B);
     
     @(posedge Clk);
     #50 Rst=0;B=1;
-    $display("%d",B);
+    //$display("%d",B);
        
     @(posedge Clk);
     #50 Rst=0;B=0;
-    $display("%d",B);
+    //$display("%d",B);
     
     @(posedge Clk);
     #50 Rst=0;B=1;    
-    $display("%d",B);
+    //$display("%d",B);
     
     $display("Tests done.Ready to simulate.");
 end
