@@ -13,11 +13,11 @@ always @(posedge Clk) begin
     else begin
         case (State)
             s0:begin
-                if (w) begin
-                    State=s1;
-                end
-                else if (~w) begin
+                if (~w) begin
                     State=s0;
+                end
+                else if (w) begin
+                    State=s1;
                 end
             end
 
@@ -32,7 +32,7 @@ always @(posedge Clk) begin
 
             s2:begin
                 if (~w) begin
-                    State=s2;
+                    State=s3;
                 end
                 else if (w) begin
                     State=s5;
@@ -41,19 +41,20 @@ always @(posedge Clk) begin
 
             s3:begin
                 if (~w) begin
-                    State=s2;
+                    State=s0;
                 end
                 else if (w) begin
-                    State=s5;
+                    z=1;
+                    State=s4;
                 end                
             end
 
             s4:begin
                 if (~w) begin
-                    State=s2;
+                    State=s0;
                 end
                 else if (w) begin
-                    State=s5;
+                    State=s6;
                 end                
             end
 
@@ -62,7 +63,7 @@ always @(posedge Clk) begin
                     State=s2;
                 end
                 else if (w) begin
-                    State=s5;
+                    State=s6;
                 end                
             end
 
@@ -71,7 +72,7 @@ always @(posedge Clk) begin
                     State=s2;
                 end
                 else if (w) begin
-                    State=s5;
+                    State=s7;
                 end                
             end
 
@@ -80,11 +81,14 @@ always @(posedge Clk) begin
                     State=s2;
                 end
                 else if (w) begin
-                    State=s5;
+                    z=1;
+                    State=s4;
                 end                
             end
 
-            default: 
+            default: begin
+                State=s0;
+            end
         endcase
     end
 end
