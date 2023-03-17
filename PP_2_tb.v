@@ -27,7 +27,7 @@ initial begin
     #50 Rst=0;B=1;
 
     @(posedge Clk);
-    #50 Rst=0;B=1;
+    #50 Rst=0;B=0;
 
     @(posedge Clk);
     #50 Rst=1;B=0;
