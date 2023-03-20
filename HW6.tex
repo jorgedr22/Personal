@@ -7,6 +7,8 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{nicematrix}
 
 
 \newcommand{\R}{\mathbb{R}}
@@ -44,18 +46,111 @@ If so, identify the equivalence classes.
     \item $\mathit{S}$ = \{1,2,6,7,11\}; $m \equiv n \pmod{3}$
 \end{enumerate}
 %answer to question 1
-\underline{Answers:}
+\underline{Answers for (a):}    
 
-\begin{enumerate}
-    \item R = \{$(m,n):m \geq n$ and $m,n \in S$\}\\R = \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\} 
-    \\
+\begin{itemize}
+    \item R = \{$(m,n):m \geq n$ and $m,n \in S$\}
+    \\R = \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\}\\
+
     \item Diagram:\\
-    \begin{tikzpicture}
-    \fill[blue!50] (2.5,0) circle (0.6) node {$hello$};
-    \fill[blue!50] (4.0,0) circle (0.6);
-    \end{tikzpicture}
-\end{enumerate}
 
+    \item Matrix:\\
+        $\begin{pNiceMatrix}[first-row,first-col]
+        & 4 & 9 & 17       \\
+        4  & 1 & 0 & 0        \\ 
+        9  & 1 & 1 & 0        \\
+        17 & 1 & 1 & 1        \\
+        \end{pNiceMatrix}$
+        \hspace{1cm} Matrix = 
+        $\begin{cases}
+            1: (m,n)\in R\\
+            0: otherwise\\  
+        \end{cases}$ \\
+    
+    \item \begin{itemize}
+       \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
+       \item R is not anti reflexive. As there are elements in $S$ which are related to itself in R.
+       \item R is not symmetric as (9,4) $\in R$ but (4,9) $\notin R$
+       \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
+        \begin{itemize}
+            \item[] a = b = 4 
+            \item[] a = b = 9 
+            \item[] a = b = 17
+        \end{itemize}
+        \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
+     \end{itemize}
+    \item R is not an equivalence relation.
+    
+\end{itemize}
+
+\pagebreak
+
+\underline{Answers for (b):}    
+
+\begin{itemize}
+    \item R = \{$(m,n):mn = 0$ and $m,n \in S$\}
+    \\R = \{(0,0),(0,2),(0,5),(2,0),(5,0)\}\\
+
+    \item Diagram:\\
+
+    \item Matrix:\\
+        $\begin{pNiceMatrix}[first-row,first-col]
+           & 0 & 2 & 5        \\
+        0  & 1 & 1 & 1        \\ 
+        2  & 1 & 0 & 0        \\
+        5  & 1 & 0 & 0        \\
+        \end{pNiceMatrix}$
+        \hspace{1cm} Matrix = 
+        $\begin{cases}
+            1: mn = 0 \\
+            0: otherwise\\  
+        \end{cases}$ \\
+    
+    \item \begin{itemize}
+       \item R is not reflexive as $(2,2) \notin R$ 
+       \item R is symmetric as (0,2) $\in R$ and (2,0) $\in R$
+        \item R is not transitive. Because (2,0) and (0,5) $\in R$ but (2,5) $\notin R$  
+     \end{itemize}
+    \item R is not an equivalence relation.
+    
+\end{itemize}
+
+\underline{Answers for (c):}    
+
+\begin{itemize}
+    \item R = \{(m,n): $m \equiv n \pmod{3}$ and $m,n \in S$\}
+    \\R = \{\}\\
+
+    \item Diagram:\\
+
+    \item Matrix:\\
+        $\begin{pNiceMatrix}[first-row,first-col]
+        & 4 & 9 & 17       \\
+        4  & 1 & 0 & 0        \\ 
+        9  & 1 & 1 & 0        \\
+        17 & 1 & 1 & 1        \\
+        \end{pNiceMatrix}$
+        \hspace{1cm} Matrix = 
+        $\begin{cases}
+            1: (m,n)\in R\\
+            0: otherwise\\  
+        \end{cases}$ \\
+    
+    \item \begin{itemize}
+       \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
+       \item R is not anti reflexive. As there are elements in $S$ which are related to itself in R.
+       \item R is not symmetric as (9,4) $\in R$ but (4,9) $\notin R$
+       \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
+        \begin{itemize}
+            \item[] a = b = 4 
+            \item[] a = b = 9 
+            \item[] a = b = 17
+        \end{itemize}
+        \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
+     \end{itemize}
+    \item R is not an equivalence relation.
+    
+\end{itemize}
 %question 2
 \item Suppose $X$ is the set \{$a,b,c,d,e$\} and $P(X)$ is the power set of $X$. 
 The domain of each of the relations below is $P(X)$. 
