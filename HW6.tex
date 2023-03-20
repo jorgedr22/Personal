@@ -25,7 +25,7 @@
 \begin{enumerate}
     \item In each question part below, I will list a set $\mathit{S}$ and 
     a rule that defines a relation $\mathit{R}$ on $\mathit{S}$ as follows: 
-    $(\mathit{m,n}) \in R$ if $\mathit{m}$and $\mathit{n}$ satisfy the given rule. 
+    $(\mathit{m,n}) \in R$ if $\mathit{m}$ and $\mathit{n}$ satisfy the given rule. 
     For each set and rule, do the following five things: 
 %qustion 1
 \begin{enumerate}[label=\bfseries \roman*]
@@ -69,8 +69,6 @@ If so, identify the equivalence classes.
     
     \item \begin{itemize}
        \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
-       \item R is not anti reflexive. As there are elements in $S$ which are related to itself in R.
-       \item R is not symmetric as (9,4) $\in R$ but (4,9) $\notin R$
        \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
         \begin{itemize}
             \item[] a = b = 4 
@@ -119,36 +117,31 @@ If so, identify the equivalence classes.
 
 \begin{itemize}
     \item R = \{(m,n): $m \equiv n \pmod{3}$ and $m,n \in S$\}
-    \\R = \{\}\\
+    \\R = \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}\\
 
     \item Diagram:\\
 
     \item Matrix:\\
         $\begin{pNiceMatrix}[first-row,first-col]
-        & 4 & 9 & 17       \\
-        4  & 1 & 0 & 0        \\ 
-        9  & 1 & 1 & 0        \\
-        17 & 1 & 1 & 1        \\
+           & 1 & 2 & 6 & 7 & 11  \\
+        1  & 1 & 0 & 0 & 1 & 0   \\ 
+        2  & 0 & 1 & 0 & 0 & 1   \\
+        6  & 0 & 0 & 1 & 0 & 0   \\
+        7  & 1 & 0 & 0 & 1 & 0   \\
+        11 & 0 & 1 & 0 & 0 & 1   \\
         \end{pNiceMatrix}$
         \hspace{1cm} Matrix = 
         $\begin{cases}
-            1: (m,n)\in R\\
+            1: m \equiv n \pmod{3}\\
             0: otherwise\\  
         \end{cases}$ \\
     
     \item \begin{itemize}
-       \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
-       \item R is not anti reflexive. As there are elements in $S$ which are related to itself in R.
-       \item R is not symmetric as (9,4) $\in R$ but (4,9) $\notin R$
-       \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
-        \begin{itemize}
-            \item[] a = b = 4 
-            \item[] a = b = 9 
-            \item[] a = b = 17
-        \end{itemize}
-        \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
+       \item R is reflexive as 
+       \item R is symmetric as 
+        \item R is transitive.   
      \end{itemize}
-    \item R is not an equivalence relation.
+    \item R is an equivalence relation.
     
 \end{itemize}
 %question 2
