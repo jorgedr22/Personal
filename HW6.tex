@@ -6,6 +6,8 @@
 \usepackage{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
+\usepackage{tikz}
+
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
@@ -23,7 +25,7 @@
     a rule that defines a relation $\mathit{R}$ on $\mathit{S}$ as follows: 
     $(\mathit{m,n}) \in R$ if $\mathit{m}$and $\mathit{n}$ satisfy the given rule. 
     For each set and rule, do the following five things: 
-
+%qustion 1
 \begin{enumerate}[label=\bfseries \roman*]
 \item List the order pairs in the relation.
 \item Draw the associated arrow diagram.
@@ -36,13 +38,25 @@ transitive or not transitive. Be sure to explain your answers.
 If so, identify the equivalence classes.     
 \end{enumerate}
 
-
 \begin{enumerate}
     \item $\mathit{S}$ = \{4,9,17\}; $m \geq n$.    
     \item $\mathit{S}$ = \{0,2,5\}; $mn$ = 0.
     \item $\mathit{S}$ = \{1,2,6,7,11\}; $m \equiv n \pmod{3}$
 \end{enumerate}
+%answer to question 1
+\underline{Answers:}
 
+\begin{enumerate}
+    \item R = \{$(m,n):m \geq n$ and $m,n \in S$\}\\R = \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\} 
+    \\
+    \item Diagram:\\
+    \begin{tikzpicture}
+    \fill[blue!50] (2.5,0) circle (0.6) node {$hello$};
+    \fill[blue!50] (4.0,0) circle (0.6);
+    \end{tikzpicture}
+\end{enumerate}
+
+%question 2
 \item Suppose $X$ is the set \{$a,b,c,d,e$\} and $P(X)$ is the power set of $X$. 
 The domain of each of the relations below is $P(X)$. 
 For each relation, describe the relation in words. Then determine whether it is 
@@ -56,6 +70,8 @@ transitive or not transitive.
     that this notation means proper subset.
 \end{enumerate}
 
+
+%question 3
 \item Determine whether the following relations are equivalence relations. 
 If so, show that the relation fulfills the requirements for an equivalence relation, 
 and describe the equivalence classes. If not, show how the relation fails to fulfill 
