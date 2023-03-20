@@ -45,12 +45,13 @@ If so, identify the equivalence classes.
     \item $\mathit{S}$ = \{0,2,5\}; $mn$ = 0.
     \item $\mathit{S}$ = \{1,2,6,7,11\}; $m \equiv n \pmod{3}$
 \end{enumerate}
+
 %answer to question 1
 \underline{Answers for (a):}    
 
 \begin{itemize}
     \item R = \{$(m,n):m \geq n$ and $m,n \in S$\}
-    \\R = \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\}\\
+    \\$\Rightarrow$ \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\}\\
 
     \item Diagram:\\
 
@@ -81,13 +82,13 @@ If so, identify the equivalence classes.
     
 \end{itemize}
 
-\pagebreak
+\pagebreak %-------------------------------------------------------------------------------------------
 
 \underline{Answers for (b):}    
 
 \begin{itemize}
     \item R = \{$(m,n):mn = 0$ and $m,n \in S$\}
-    \\R = \{(0,0),(0,2),(0,5),(2,0),(5,0)\}\\
+    \\$\Rightarrow$ \{(0,0),(0,2),(0,5),(2,0),(5,0)\}\\
 
     \item Diagram:\\
 
@@ -113,11 +114,13 @@ If so, identify the equivalence classes.
     
 \end{itemize}
 
+\pagebreak %-------------------------------------------------------------------------------------------
+
 \underline{Answers for (c):}    
 
 \begin{itemize}
     \item R = \{(m,n): $m \equiv n \pmod{3}$ and $m,n \in S$\}
-    \\R = \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}\\
+    \\$\Rightarrow$ \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}\\
 
     \item Diagram:\\
 
@@ -137,13 +140,15 @@ If so, identify the equivalence classes.
         \end{cases}$ \\
     
     \item \begin{itemize}
-       \item R is reflexive as 
-       \item R is symmetric as 
-        \item R is transitive.   
+        \item R is reflexive as the diagnol of the matrix consist on only 1's.
+        \item R is symmetric as since $\forall$ $m$ and $n$, (m,n) and (n,m) are 1's.
+        \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ then $mRm$ and $nRn$.
      \end{itemize}
-    \item R is an equivalence relation.
-    
+    \item R is an equivalence relation since it is reflexive,symmetric, and transitive for the reasons mentioned above.
 \end{itemize}
+
+\pagebreak %-------------------------------------------------------------------------------------------
+
 %question 2
 \item Suppose $X$ is the set \{$a,b,c,d,e$\} and $P(X)$ is the power set of $X$. 
 The domain of each of the relations below is $P(X)$. 
@@ -154,10 +159,47 @@ transitive or not transitive.
 \begin{enumerate}
     \item $A$ is related to $B$ if $\lvert A-B \rvert$ = 1. The 
     vertical bars mean the cardinality of $A - B$.
+    \begin{enumerate}
+
+        \item Let $A \in P(X)$:\\
+              $\Rightarrow$ Now, $A - A$ = $\emptyset$\\
+              $\Rightarrow$ $\left\lvert A - A\right\rvert$ = 0 $\neq 1$\\
+              $\Rightarrow$ $A \nsim A$.\\
+              Since the choice of set A is completely arbritiary, we can say that set $A$ is anit-reflexive.\\
+
+        \item Let $A$ = \{a\}, $B$ = $\emptyset$ and $A,B \in P(X)$:\\
+             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = $\emptyset$\\
+             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 0\\
+             $\Rightarrow$ From this we can say that $A \sim B$ but $B \nsim A$\\
+             This results in the conclusion that the relation is not symmetric.\\
+
+        \item Let $A$ = \{a,b\}, $B$ = {b,a} and $A,B \in P(X)$:\\
+             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
+             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
+             $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$ but $A \neq B$\\
+             We can say that the relation is not antisymmetric. $therefore$ the relation is neiter symmetric nor antisymmetric.\\
+
+        \item Let $A$ = \{a,b\}, $B$ = {b,c} and $A,B \in P(X)$:\\
+             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
+             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
+             $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$\\
+             But from the (i) we said that $A \nsim A$,\\ $\therefore$ the relation is not transitive.
+            \end{enumerate}
+
+In short, the relation is $\therefore$ 
+\begin{itemize}
+    \item antireflexive
+    \item neiter symmetric and antisymmetric
+    \item not transitive
+\end{itemize}
+
+\pagebreak %-------------------------------------------------------------------------------------------
+
     \item $A$ is related to $B$ if $A \subset B$. Note 
     that this notation means proper subset.
 \end{enumerate}
 
+\pagebreak %-------------------------------------------------------------------------------------------
 
 %question 3
 \item Determine whether the following relations are equivalence relations. 
