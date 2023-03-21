@@ -13,7 +13,7 @@ module lab5(Clk, Rst, go, sum, done);
     wire [5:0] i, sumout;
     wire Co, AltB;
 
-/// Controller is already instantiated below with all control signals that you can use in your code.     
+    //Controller is already instantiated below with all control signals that you can use in your code.     
     wire muxsel, R_en, i_clr, i_ld;
     wire temp2_clr, temp2_ld;
     wire temp1_clr, temp1_ld;
@@ -40,5 +40,22 @@ module lab5(Clk, Rst, go, sum, done);
     Adder_12bits c12(sum, {4'b0,S}, 1'b0, S2, Co); //Co
     
     Subtractor_8bits c13(D1,D2,S);
+    
+    /*
+    For waveform, display: (show up to 21 us for done = 1)
+    -CLK
+    -Rst
+    -go
+    -done
+    -temp1[7:0]
+    -temp2[7:0]
+    -temp1_gt_temp2
+    -S2[11:0]
+    -sum[11:0]
+    -i[5:0]
+    -R_Addr[4:0]
+    -R_en
+    -R_Data[7:0]
+    */
 
 endmodule
