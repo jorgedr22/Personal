@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "lab5.v"
 `include "Adder_6bits.v"
 `include "Adder_12bits.v"
 `include "Comparator_6bits.v"
