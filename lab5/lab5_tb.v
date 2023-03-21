@@ -1,16 +1,5 @@
 `timescale 1ns / 1ps
 `include "lab5.v"
-`include "Adder_6bits.v"
-`include "Adder_12bits.v"
-`include "Comparator_6bits.v"
-`include "Comparator_8bits.v"
-`include "Controller.v"
-`include "mux8bits_2x1.v"
-`include "RegFile_32x8.v"
-`include "Register_6bits.v"
-`include "Register_8bits.v"
-`include "Register_12bits.v"
-`include "Subtractor_8bits.v"
 
 module lab5_tb;
     reg Clk, Rst, go;
@@ -30,7 +19,7 @@ module lab5_tb;
     
     initial
     begin
-        $dumpfile("lab5_tb.vcd");
+        $dumpfile("lab5.vcd");
         $dumpvars(0,lab5_tb);
 
         Rst <= 1'b1; go <= 0;
@@ -41,6 +30,8 @@ module lab5_tb;
         #50 go <= 1;
         @ (posedge Clk);
         #50 go <= 0;
+
+        $display("Test complete");
     end
 endmodule
 
