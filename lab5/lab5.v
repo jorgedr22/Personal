@@ -11,7 +11,8 @@ module lab5(Clk, Rst, go, sum, done);
     wire [7:0]temp1,temp2,R_data,D1,D2,S;
     wire [11:0] S2;
     wire [5:0] i, sumout;
-            
+    wire Co, AltB;
+
 /// Controller is already instantiated below with all control signals that you can use in your code.     
     wire muxsel, R_en, i_clr, i_ld;
     wire temp2_clr, temp2_ld;
@@ -20,7 +21,7 @@ module lab5(Clk, Rst, go, sum, done);
     wire temp1_gt_temp2, i_lt_32;
     
     Controller c1(Clk, Rst, go, temp1_gt_temp2, i_lt_32, done, muxsel, R_en,
-                  bi_clr, i_ld, temp1_clr, temp1_ld, temp2_clr, temp2_ld, sum_clr, sum_ld);
+                  i_clr, i_ld, temp1_clr, temp1_ld, temp2_clr, temp2_ld, sum_clr, sum_ld);
     
     RegisterFile_32_8 c2(i[4:0], 5'b0, R_en, 1'b0, R_data, 8'b0, Clk, Rst);
     
