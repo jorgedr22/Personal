@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lab5_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="lab5_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="21000000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="153"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/lab5_tb/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/Rst" type="logic">
+      <obj_property name="ElementShortName">Rst</obj_property>
+      <obj_property name="ObjectShortName">Rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/go" type="logic">
+      <obj_property name="ElementShortName">go</obj_property>
+      <obj_property name="ObjectShortName">go</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/temp1" type="array">
+      <obj_property name="ElementShortName">temp1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">temp1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/temp2" type="array">
+      <obj_property name="ElementShortName">temp2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/temp1_gt_temp2" type="logic">
+      <obj_property name="ElementShortName">temp1_gt_temp2</obj_property>
+      <obj_property name="ObjectShortName">temp1_gt_temp2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/S2" type="array">
+      <obj_property name="ElementShortName">S2[11:0]</obj_property>
+      <obj_property name="ObjectShortName">S2[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/sum" type="array">
+      <obj_property name="ElementShortName">sum[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sum[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/c1/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/i" type="array">
+      <obj_property name="ElementShortName">i[5:0]</obj_property>
+      <obj_property name="ObjectShortName">i[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/c2/R_Addr" type="array">
+      <obj_property name="ElementShortName">R_Addr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">R_Addr[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/c1/R_en" type="logic">
+      <obj_property name="ElementShortName">R_en</obj_property>
+      <obj_property name="ObjectShortName">R_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/lab5_tb/a1/c2/R_Data" type="array">
+      <obj_property name="ElementShortName">R_Data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">R_Data[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
