@@ -1,7 +1,7 @@
 `timescale 1ps/1ps
 `include "PP_6.v"
 
-module PP_6_tb();
+module testbench();
     reg a,b,Rst,Clk;
     wire y;
 

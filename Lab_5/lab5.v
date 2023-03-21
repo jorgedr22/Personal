@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module Lab5(Clk, Rst, go, sum, done);
     input Clk, Rst, go;
     output [11:0] sum;
@@ -21,7 +20,7 @@ module Lab5(Clk, Rst, go, sum, done);
     wire temp1_gt_temp2, i_lt_32;
     
     Controller c1(Clk, Rst, go, temp1_gt_temp2, i_lt_32, done, muxsel, R_en,
-                  i_clr, i_ld, temp1_clr, temp1_ld, temp2_clr, temp2_ld, sum_clr, sum_ld);
+                  bi_clr, i_ld, temp1_clr, temp1_ld, temp2_clr, temp2_ld, sum_clr, sum_ld);
     
     RegisterFile_32_8 c2(i[4:0], 5'b0, R_en, 1'b0, R_data, 8'b0, Clk, Rst);
     
