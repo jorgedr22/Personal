@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-`include "lab5.v"
+
 
 module lab5_tb;
     reg Clk, Rst, go;
@@ -19,8 +19,6 @@ module lab5_tb;
     
     initial
     begin
-        $dumpfile("lab5.vcd");
-        $dumpvars(0,lab5_tb);
 
         Rst <= 1'b1; go <= 0;
         @ (posedge Clk);
@@ -31,7 +29,6 @@ module lab5_tb;
         @ (posedge Clk);
         #50 go <= 0;
 
-        $display("Test complete");
     end
 endmodule
 
