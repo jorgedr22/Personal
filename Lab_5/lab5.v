@@ -41,6 +41,4 @@ module Lab5(Clk, Rst, go, sum, done);
     
     Subtractor_8bits c13(D1,D2,S);
 
-
-
 endmodule
