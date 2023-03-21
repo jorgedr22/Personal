@@ -11,13 +11,13 @@
 `include "Register_12bits.v"
 `include "Subtractor_8bits.v"
 
-module Lab5_tb();
+module lab5_tb;
     reg Clk, Rst, go;
     wire [11:0] sum;
     wire done;
     
     
-    Lab5 a1(Clk, Rst, go, sum, done);
+    lab5 a1(Clk, Rst, go, sum, done);
     
     always 
     begin
@@ -29,8 +29,8 @@ module Lab5_tb();
     
     initial
     begin
-        $dumpfile("Lab5_tb.vcd");
-        $dumpvars(0,Lab5_tb);
+        $dumpfile("lab5_tb.vcd");
+        $dumpvars(0,lab5_tb);
 
         Rst <= 1'b1; go <= 0;
         @ (posedge Clk);

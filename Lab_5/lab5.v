@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module Lab5(Clk, Rst, go, sum, done);
+module lab5(Clk, Rst, go, sum, done);
     input Clk, Rst, go;
     output [11:0] sum;
     output done;
