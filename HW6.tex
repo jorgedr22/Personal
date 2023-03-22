@@ -246,12 +246,17 @@ the requirements.
     \end{itemize}
     Therefore, it is an equivalence relation. The equivalence classes are:\\
     $\rightarrow$ If $a \in \R$, the equivalence classes will be $[a]$ = \{$x \in \R$: cos($a$) = cos($x$)\}\\
+
     \item The relation $\varpropto$ on the domain $\Z^+\times\Z^+$ is defined by $(m,n) \varpropto (p,q)$ iff $mq = np$.
     \begin{itemize}
-        \item Reflexive:\\ 
-        \item Symmetric:\\
-        \item Transitivity:\\
+        \item Reflexive:\\Let $n = m$ and $q = p$. Then $(m,m) \in \Z^+\times\Z^+$ iff $mp = mp$\\$\therefore$ $\textbf{Reflexivity holds.}$\\
+        \item Symmetric:\\If $(m,n)$ and $(p,q)$ are related then it implies $(p,q)$ and $(m,n)$ are related.\\Assume that $(m,n) \varpropto (p,q)$,
+        this says that $mq = np$ and can be rewritten as $qm = pn$. This says, $(q,p) \sim (m,n)$\\$\therefore$ $\textbf{Symmetry does holds.}$
     \end{itemize}
+
+    Because symmetry does not hold, the relation is $\textbf{not an equivalence relation.}$ The reason for this conclusion is soley
+    because as long as a relation does not hold at least one of the requirements, the relation fails to be an equivalence relation. In this case,
+    we dont not need to prove or disprove transitivity since symmetry already failed.
 \end{enumerate}
 
 \end{enumerate}
