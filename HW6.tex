@@ -78,7 +78,7 @@ If so, identify the equivalence classes.
         \end{itemize}
         \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
      \end{itemize}
-    \item R is not an equivalence relation.
+    \item R is not an equivalence relation based on the reasons mentioned above.
     
 \end{itemize}
 
@@ -110,7 +110,7 @@ If so, identify the equivalence classes.
        \item R is symmetric as (0,2) $\in R$ and (2,0) $\in R$
         \item R is not transitive. Because (2,0) and (0,5) $\in R$ but (2,5) $\notin R$  
      \end{itemize}
-    \item R is not an equivalence relation.
+    \item R is not an equivalence relation based on the reasons mentioned above.
     
 \end{itemize}
 
@@ -142,9 +142,11 @@ If so, identify the equivalence classes.
     \item \begin{itemize}
         \item R is reflexive as the diagnol of the matrix consist on only 1's.
         \item R is symmetric as since $\forall$ $m$ and $n$, (m,n) and (n,m) are 1's.
-        \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ then $mRm$ and $nRn$.
+        \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ 
+        then $mRm$ and $nRn$.
      \end{itemize}
-    \item R is an equivalence relation since it is reflexive,symmetric, and transitive for the reasons mentioned above.
+    \item R is an equivalence relation since it is reflexive,symmetric, and transitive for 
+    the reasons mentioned above.
 \end{itemize}
 
 \pagebreak %-------------------------------------------------------------------------------------------
@@ -165,7 +167,8 @@ transitive or not transitive.
               $\Rightarrow$ Now, $A - A$ = $\emptyset$\\
               $\Rightarrow$ $\left\lvert A - A\right\rvert$ = 0 $\neq 1$\\
               $\Rightarrow$ $A \nsim A$.\\
-              Since the choice of set A is completely arbritiary, we can say that set $A$ is anit-reflexive.\\
+              Since the choice of set A is completely arbritiary, we can say that set $A$ is 
+              anit-reflexive.\\
 
         \item Let $A$ = \{a\}, $B$ = $\emptyset$ and $A,B \in P(X)$:\\
              $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = $\emptyset$\\
@@ -177,7 +180,8 @@ transitive or not transitive.
              $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
              $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
              $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$ but $A \neq B$\\
-             We can say that the relation is not antisymmetric. $therefore$ the relation is neiter symmetric nor antisymmetric.\\
+             We can say that the relation is not antisymmetric. $therefore$ the relation is 
+             neiter symmetric nor antisymmetric.\\
 
         \item Let $A$ = \{a,b\}, $B$ = {b,c} and $A,B \in P(X)$:\\
              $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
@@ -186,17 +190,31 @@ transitive or not transitive.
              But from the (i) we said that $A \nsim A$,\\ $\therefore$ the relation is not transitive.
             \end{enumerate}
 
-In short, the relation is $\therefore$ 
+In short, the relation is :
 \begin{itemize}
-    \item antireflexive
-    \item neiter symmetric and antisymmetric
-    \item not transitive
+    \item $\textbf{antireflexive}$
+    \item $\textbf{neither symmetric and antisymmetric}$
+    \item $\textbf{not transitive}$
 \end{itemize}
 
 \pagebreak %-------------------------------------------------------------------------------------------
 
     \item $A$ is related to $B$ if $A \subset B$. Note 
     that this notation means proper subset.
+    \begin{enumerate}
+        \item Since every element of a set $A$ is contained in itself, $A \sim A$ $\forall A$
+        and it makes the relation $\textbf{reflexive}$
+        \item Let $A \sim B$ and $B \sim A$. Here as per definition, every element of $A \in B$ 
+        and  $B \in A$ also. Hence A = B. \\$\therefore$ The relation is $\textbf{antisymmetric}$.
+        \item  Let $A \sim B$ and $B \sim C$, then it means that $A \in B$ and $B \in C$. That automatically puts 
+        every element of A inside C. So $A \sim C$ and hence the relation is $\textbf{transitive}$.
+    \end{enumerate}
+    In short, the relation is :
+\begin{itemize}
+    \item $\textbf{reflexive}$
+    \item $\textbf{antisymmetric}$
+    \item $\textbf{transitive}$
+\end{itemize}
 \end{enumerate}
 
 \pagebreak %-------------------------------------------------------------------------------------------
@@ -208,7 +226,20 @@ and describe the equivalence classes. If not, show how the relation fails to ful
 the requirements.
 
 \begin{enumerate}
-    \item The relation $\mathcal{C}$ is defined by $(x,y)\in \mathcal{C}$ iff cos($x$) = cos($y$), where $x,y \in R$.
+    \item The relation $\mathcal{C}$ is defined by $(x,y)\in \mathcal{C}$ iff cos($x$) = cos($y$), 
+    where $x,y \in \R$.
+    \begin{itemize}
+        \item Reflexive:\\ Let $y = x$. From this, $(x,x) \in \mathcal{C}$.\\ 
+        $\Rightarrow$ $\therefore$ cos($x$) = cos($x$) holds.\\
+        Similarly, let $x = y$. From this $(y,y)$\\ 
+        $\Rightarrow$ $\therefore$ cos($y$) = cos($y$) also holds. 
+
+        \item Symmetric:\\If $x \sim y$, then it implies that $y \sim x$.\\Assume that $(x,y) \in 
+        \mathcal{C}$ then cos($x$) = cos($y$) can be rewritten as cos($y$) = cos($x$).\\This implies 
+        that $(y,x) \in \mathcal{C}$. 
+
+        
+    \end{itemize}
     \item The relation $\varpropto$ on the domain $\Z^+\times\Z^+$ is defined by $(m,n) \varpropto (p,q)$ iff $mq = np$.
 \end{enumerate}
 
