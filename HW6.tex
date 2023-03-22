@@ -10,6 +10,8 @@
 \usetikzlibrary{positioning}
 \usepackage{amsmath}
 \usepackage{nicematrix}
+\usepackage{blindtext}
+\usepackage{multicol}
 
 
 \newcommand{\R}{\mathbb{R}}
@@ -54,50 +56,52 @@ If so, identify the equivalence classes.
 \begin{itemize}
     \item R = \{$(m,n):m \geq n$ and $m,n \in S$\}
     \\$\Rightarrow$ \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\}\\
+   
+    \begin{multicols}{2}
+        \item Diagram:\\
+        \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
+            %Nodes
+            \node[roundnode](maintopic){4};
+            \node[roundnode](rightcirlce_4)[right=of maintopic]{4};
+            \node[roundnode](rightcirlce_9)[below=of rightcirlce_4]{9};
+            \node[roundnode](rightcirlce_17)[below=of rightcirlce_9]{17};
+            \node[roundnode](leftcirlce_9)[below=of maintopic]{9};
+            \node[roundnode](leftcirlce_17)[below=of leftcirlce_9]{17};
+            
+            %Lines
+            \draw[->] (maintopic.east) -- (rightcirlce_4.north west);
+            \draw[->] (leftcirlce_9.east) -- (rightcirlce_4.west);
+            \draw[->] (leftcirlce_9.east) -- (rightcirlce_9.west);
+            \draw[->] (leftcirlce_17.east) -- (rightcirlce_4.south west);
+            \draw[->] (leftcirlce_17.east) -- (rightcirlce_9.south west);
+            \draw[->] (leftcirlce_17.east) -- (rightcirlce_17.west);
+        \end{tikzpicture}
+        \columnbreak
+        \item Matrix:\\
+            $\begin{pNiceMatrix}[first-row,first-col]
+            & 4 & 9 & 17          \\
+            4  & 1 & 0 & 0        \\ 
+            9  & 1 & 1 & 0        \\
+            17 & 1 & 1 & 1        \\
+            \end{pNiceMatrix}$
+            Matrix = 
+            $\begin{cases}
+                1: (m,n)\in R\\
+                0: otherwise\\  
+            \end{cases}$ \\
 
-    \item Diagram:\\
-    \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
-        %Nodes
-        \node[roundnode](maintopic){4};
-        \node[roundnode](rightcirlce_4)[right=of maintopic]{4};
-        \node[roundnode](rightcirlce_9)[below=of rightcirlce_4]{9};
-        \node[roundnode](rightcirlce_17)[below=of rightcirlce_9]{17};
-        \node[roundnode](leftcirlce_9)[below=of maintopic]{9};
-        \node[roundnode](leftcirlce_17)[below=of leftcirlce_9]{17};
-        
-        %Lines
-        \draw[->] (maintopic.east) -- (rightcirlce_4.north west);
-        \draw[->] (leftcirlce_9.east) -- (rightcirlce_4.west);
-        \draw[->] (leftcirlce_9.east) -- (rightcirlce_9.west);
-        \draw[->] (leftcirlce_17.east) -- (rightcirlce_4.south west);
-        \draw[->] (leftcirlce_17.east) -- (rightcirlce_9.south west);
-        \draw[->] (leftcirlce_17.east) -- (rightcirlce_17.west);
-    \end{tikzpicture}
-    \item Matrix:\\
-        $\begin{pNiceMatrix}[first-row,first-col]
-        & 4 & 9 & 17       \\
-        4  & 1 & 0 & 0        \\ 
-        9  & 1 & 1 & 0        \\
-        17 & 1 & 1 & 1        \\
-        \end{pNiceMatrix}$
-        \hspace{1cm} Matrix = 
-        $\begin{cases}
-            1: (m,n)\in R\\
-            0: otherwise\\  
-        \end{cases}$ \\
-    
-    \item \begin{itemize}
-       \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
-       \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
-        \begin{itemize}
-            \item[] a = b = 4 
-            \item[] a = b = 9 
-            \item[] a = b = 17
+        \item \begin{itemize}
+        \item R is reflexive as $(m,n) \in R$ $\forall$ $m \in S$
+        \item R is anti symmetric. As if(a,b) $\in R$ and (b,a) $\in R$ then a = b for: 
+            \begin{itemize}
+                \item[] a = b = 4 
+                \item[] a = b = 9 
+                \item[] a = b = 17
+            \end{itemize}
+            \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
         \end{itemize}
-        \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
-     \end{itemize}
-    \item R is not an equivalence relation based on the reasons mentioned above.
-    
+        \item R is not an equivalence relation based on the reasons mentioned above.
+    \end{multicols} 
 \end{itemize}
 
 \pagebreak %-------------------------------------------------------------------------------------------
@@ -107,7 +111,7 @@ If so, identify the equivalence classes.
 \begin{itemize}
     \item R = \{$(m,n):mn = 0$ and $m,n \in S$\}
     \\$\Rightarrow$ \{(0,0),(0,2),(0,5),(2,0),(5,0)\}\\
-
+\begin{multicols}{2}
     \item Diagram:\\
     \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
         %Nodes
@@ -134,139 +138,151 @@ If so, identify the equivalence classes.
         2  & 1 & 0 & 0        \\
         5  & 1 & 0 & 0        \\
         \end{pNiceMatrix}$
-        \hspace{1cm} Matrix = 
+        Matrix = 
         $\begin{cases}
             1: mn = 0 \\
             0: otherwise\\  
         \end{cases}$ \\
-    
+
     \item \begin{itemize}
        \item R is not reflexive as $(2,2) \notin R$ 
        \item R is symmetric as (0,2) $\in R$ and (2,0) $\in R$
         \item R is not transitive. Because (2,0) and (0,5) $\in R$ but (2,5) $\notin R$  
      \end{itemize}
     \item R is not an equivalence relation based on the reasons mentioned above.
+\end{multicols}
     
 \end{itemize}
-
-\pagebreak %-------------------------------------------------------------------------------------------
 
 \underline{Answers for (c):}    
 
 \begin{itemize}
     \item R = \{(m,n): $m \equiv n \pmod{3}$ and $m,n \in S$\}
-    \\$\Rightarrow$ \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}\\
+    \\$\Rightarrow$ \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}
+    \begin{multicols}{2}
+        \item Diagram:\\
+        \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
+            %Nodes
+            \node[roundnode](maintopic){1};
+            \node[roundnode](leftcirlce_2)[below= of maintopic]{2};
+            \node[roundnode](leftcirlce_6)[below= of leftcirlce_2]{6};
+            \node[roundnode](leftcirlce_7)[below= of leftcirlce_6]{7};
+            \node[roundnode](leftcirlce_11)[below= of leftcirlce_7]{11};
+            \node[roundnode](rightcirlce_1)[right= of maintopic]{1};
+            \node[roundnode](rightcirlce_2)[below= of rightcirlce_1]{2};
+            \node[roundnode](rightcirlce_6)[below= of rightcirlce_2]{6};
+            \node[roundnode](rightcirlce_7)[below= of rightcirlce_6]{7};
+            \node[roundnode](rightcirlce_11)[below= of rightcirlce_7]{11};
 
-    \item Diagram:\\
-    \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
-        %Nodes
-        \node[roundnode](maintopic){1};
-        \node[roundnode](leftcirlce)[below= of maintopic]{2};
-        \node[roundnode](leftcirlce)[below= of leftcirlce]{6};
-        \node[roundnode](leftcirlce)[below= of leftcirlce]{7};
-        \node[roundnode](leftcirlce)[below= of leftcirlce]{11};
-        \node[roundnode](rightcirlce)[right= of maintopic]{1};
-        \node[roundnode](rightcirlce)[below= of rightcirlce]{2};
-        \node[roundnode](rightcirlce)[below= of rightcirlce]{6};
-        \node[roundnode](rightcirlce)[below= of rightcirlce]{7};
-        \node[roundnode](rightcirlce)[below= of rightcirlce]{11};
+            %Lines
+            \draw[->](maintopic.east)--(rightcirlce_1.west);
+            \draw[->](maintopic.east)--(rightcirlce_7.north west);
+            \draw[->](leftcirlce_2.east)--(rightcirlce_2.west);
+            \draw[->](leftcirlce_2.east)--(rightcirlce_11.north west);
+            \draw[->](leftcirlce_6.east)--(rightcirlce_6.west);
+            \draw[->](leftcirlce_7.east)--(rightcirlce_1.south west);
+            \draw[->](leftcirlce_7.east)--(rightcirlce_7.west);
+            \draw[->](leftcirlce_11.east)--(rightcirlce_2.south west);
+            \draw[->](leftcirlce_11.east)--(rightcirlce_11.west);
 
-        %Lines
-        \draw[->](leftcirlce.east)--(rightcirlce.west);
-    \end{tikzpicture}
-    \item Matrix:\\
-        $\begin{pNiceMatrix}[first-row,first-col]
-           & 1 & 2 & 6 & 7 & 11  \\
-        1  & 1 & 0 & 0 & 1 & 0   \\ 
-        2  & 0 & 1 & 0 & 0 & 1   \\
-        6  & 0 & 0 & 1 & 0 & 0   \\
-        7  & 1 & 0 & 0 & 1 & 0   \\
-        11 & 0 & 1 & 0 & 0 & 1   \\
-        \end{pNiceMatrix}$
-        \hspace{1cm} Matrix = 
-        $\begin{cases}
-            1: m \equiv n \pmod{3}\\
-            0: otherwise\\  
-        \end{cases}$ \\
-    
-    \item \begin{itemize}
-        \item R is reflexive as the diagnol of the matrix consist on only 1's.
-        \item R is symmetric as since $\forall$ $m$ and $n$, (m,n) and (n,m) are 1's.
-        \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ 
-        then $mRm$ and $nRn$.
-     \end{itemize}
-    \item R is an equivalence relation since it is reflexive,symmetric, and transitive for 
-    the reasons mentioned above.
+
+        \end{tikzpicture}
+        \item Matrix:\\
+            $\begin{pNiceMatrix}[first-row,first-col]
+            & 1 & 2 & 6 & 7 & 11  \\
+            1  & 1 & 0 & 0 & 1 & 0   \\ 
+            2  & 0 & 1 & 0 & 0 & 1   \\
+            6  & 0 & 0 & 1 & 0 & 0   \\
+            7  & 1 & 0 & 0 & 1 & 0   \\
+            11 & 0 & 1 & 0 & 0 & 1   \\
+            \end{pNiceMatrix}$
+            Matrix = 
+            $\begin{cases}
+                1: m \equiv n \pmod{3}\\
+                0: otherwise\\  
+            \end{cases}$ \\
+
+        \item \begin{itemize}
+            \item R is reflexive as the diagnol of the matrix consist on only 1's.
+            \item R is symmetric as since $\forall$ $m$ and $n$, (m,n) and (n,m) are 1's.
+            \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ 
+            then $mRm$ and $nRn$.
+        \end{itemize}
+        \item R is an equivalence relation since it is reflexive,symmetric, and transitive for 
+        the reasons mentioned above.
+    \end{multicols}
 \end{itemize}
+
 
 \pagebreak %-------------------------------------------------------------------------------------------
 
 %question 2
-\item Suppose $X$ is the set \{$a,b,c,d,e$\} and $P(X)$ is the power set of $X$. 
-The domain of each of the relations below is $P(X)$. 
-For each relation, describe the relation in words. Then determine whether it is 
-reflexive, antireflexive, or neither; symmetric, anti-symmetric, or neither; and 
-transitive or not transitive.
 
-\begin{enumerate}
-    \item $A$ is related to $B$ if $\lvert A-B \rvert$ = 1. The 
-    vertical bars mean the cardinality of $A - B$.
+    \item Suppose $X$ is the set \{$a,b,c,d,e$\} and $P(X)$ is the power set of $X$. 
+    The domain of each of the relations below is $P(X)$. 
+    For each relation, describe the relation in words. Then determine whether it is 
+    reflexive, antireflexive, or neither; symmetric, anti-symmetric, or neither; and 
+    transitive or not transitive.
+\begin{multicols}{2}
     \begin{enumerate}
+        \item $A$ is related to $B$ if $\lvert A-B \rvert$ = 1. The 
+        vertical bars mean the cardinality of $A - B$.
+        \begin{enumerate}
 
-        \item Let $A \in P(X)$:\\
-              $\Rightarrow$ Now, $A - A$ = $\emptyset$\\
-              $\Rightarrow$ $\left\lvert A - A\right\rvert$ = 0 $\neq 1$\\
-              $\Rightarrow$ $A \nsim A$.\\
-              Since the choice of set A is completely arbritiary, we can say that set $A$ is 
-              anit-reflexive.\\
+            \item Let $A \in P(X)$:\\
+                $\Rightarrow$ Now, $A - A$ = $\emptyset$\\
+                $\Rightarrow$ $\left\lvert A - A\right\rvert$ = 0 $\neq 1$\\
+                $\Rightarrow$ $A \nsim A$.\\
+                Since the choice of set A is completely arbritiary, we can say that set $A$ is 
+                anit-reflexive.\\
 
-        \item Let $A$ = \{a\}, $B$ = $\emptyset$ and $A,B \in P(X)$:\\
-             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = $\emptyset$\\
-             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 0\\
-             $\Rightarrow$ From this we can say that $A \sim B$ but $B \nsim A$\\
-             This results in the conclusion that the relation is not symmetric.\\
+            \item Let $A$ = \{a\}, $B$ = $\emptyset$ and $A,B \in P(X)$:\\
+                $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = $\emptyset$\\
+                $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 0\\
+                $\Rightarrow$ From this we can say that $A \sim B$ but $B \nsim A$\\
+                This results in the conclusion that the relation is not symmetric.\\
 
-        \item Let $A$ = \{a,b\}, $B$ = {b,a} and $A,B \in P(X)$:\\
-             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
-             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
-             $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$ but $A \neq B$\\
-             We can say that the relation is not antisymmetric. $therefore$ the relation is 
-             neiter symmetric nor antisymmetric.\\
+            \item Let $A$ = \{a,b\}, $B$ = {b,a} and $A,B \in P(X)$:\\
+                $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
+                $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
+                $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$ but $A \neq B$\\
+                We can say that the relation is not antisymmetric. $therefore$ the relation is 
+                neiter symmetric nor antisymmetric.\\
 
-        \item Let $A$ = \{a,b\}, $B$ = {b,c} and $A,B \in P(X)$:\\
-             $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
-             $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
-             $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$\\
-             But from the (i) we said that $A \nsim A$,\\ $\therefore$ the relation is not transitive.
-            \end{enumerate}
+            \item Let $A$ = \{a,b\}, $B$ = {b,c} and $A,B \in P(X)$:\\
+                $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
+                $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
+                $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$\\
+                But from the (i) we said that $A \nsim A$,\\ $\therefore$ the relation is not transitive.
+        \end{enumerate}
 
-In short, the relation is :
-\begin{itemize}
-    \item $\textbf{antireflexive}$
-    \item $\textbf{neither symmetric and antisymmetric}$
-    \item $\textbf{not transitive}$
-\end{itemize}
-
-\pagebreak %-------------------------------------------------------------------------------------------
-
-    \item $A$ is related to $B$ if $A \subset B$. Note 
-    that this notation means proper subset.
-    \begin{enumerate}
-        \item Since every element of a set $A$ is contained in itself, $A \sim A$ $\forall A$
-        and it makes the relation $\textbf{reflexive}$
-        \item Let $A \sim B$ and $B \sim A$. Here as per definition, every element of $A \in B$ 
-        and  $B \in A$ also. Hence A = B. \\$\therefore$ The relation is $\textbf{antisymmetric}$.
-        \item  Let $A \sim B$ and $B \sim C$, then it means that $A \in B$ and $B \in C$. That automatically puts 
-        every element of A inside C. So $A \sim C$ and hence the relation is $\textbf{transitive}$.
-    \end{enumerate}
     In short, the relation is :
-\begin{itemize}
-    \item $\textbf{reflexive}$
-    \item $\textbf{antisymmetric}$
-    \item $\textbf{transitive}$
-\end{itemize}
-\end{enumerate}
-
+    \begin{itemize}
+        \item $\textbf{antireflexive}$
+        \item $\textbf{neither symmetric and antisymmetric}$
+        \item $\textbf{not transitive}$
+    \end{itemize}
+    
+    \columnbreak
+    
+    \item $A$ is related to $B$ if $A \subset B$. Note 
+        that this notation means proper subset.
+        \begin{enumerate}
+            \item Since every element of a set $A$ is contained in itself, $A \sim A$ $\forall A$
+            and it makes the relation $\textbf{reflexive}$\\
+            \item Let $A \sim B$ and $B \sim A$. Here as per definition, every element of $A \in B$ 
+            and  $B \in A$ also. Hence A = B. \\$\therefore$ The relation is $\textbf{antisymmetric}$.\\
+            \item  Let $A \sim B$ and $B \sim C$, then it means that $A \in B$ and $B \in C$. That automatically puts 
+            every element of A inside C. So $A \sim C$ and hence the relation is $\textbf{transitive}$.\\
+        \end{enumerate}
+        In short, the relation is :
+    \begin{itemize}
+        \item $\textbf{reflexive}$
+        \item $\textbf{antisymmetric}$
+        \item $\textbf{transitive}$
+    \end{itemize}
+    \end{enumerate}
+\end{multicols}
 \pagebreak %-------------------------------------------------------------------------------------------
 
 %question 3
