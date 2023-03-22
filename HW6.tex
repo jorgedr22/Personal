@@ -7,6 +7,7 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{amsmath}
 \usepackage{nicematrix}
 
@@ -47,6 +48,7 @@ If so, identify the equivalence classes.
 \end{enumerate}
 
 %answer to question 1
+\small
 \underline{Answers for (a):}    
 
 \begin{itemize}
@@ -54,7 +56,23 @@ If so, identify the equivalence classes.
     \\$\Rightarrow$ \{(17,4),(9,4),(17,9),(4,4),(9,9),(17,17)\}\\
 
     \item Diagram:\\
-
+    \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
+        %Nodes
+        \node[roundnode](maintopic){4};
+        \node[roundnode](rightcirlce_4)[right=of maintopic]{4};
+        \node[roundnode](rightcirlce_9)[below=of rightcirlce_4]{9};
+        \node[roundnode](rightcirlce_17)[below=of rightcirlce_9]{17};
+        \node[roundnode](leftcirlce_9)[below=of maintopic]{9};
+        \node[roundnode](leftcirlce_17)[below=of leftcirlce_9]{17};
+        
+        %Lines
+        \draw[->] (maintopic.east) -- (rightcirlce_4.north west);
+        \draw[->] (leftcirlce_9.east) -- (rightcirlce_4.west);
+        \draw[->] (leftcirlce_9.east) -- (rightcirlce_9.west);
+        \draw[->] (leftcirlce_17.east) -- (rightcirlce_4.south west);
+        \draw[->] (leftcirlce_17.east) -- (rightcirlce_9.south west);
+        \draw[->] (leftcirlce_17.east) -- (rightcirlce_17.west);
+    \end{tikzpicture}
     \item Matrix:\\
         $\begin{pNiceMatrix}[first-row,first-col]
         & 4 & 9 & 17       \\
@@ -91,6 +109,23 @@ If so, identify the equivalence classes.
     \\$\Rightarrow$ \{(0,0),(0,2),(0,5),(2,0),(5,0)\}\\
 
     \item Diagram:\\
+    \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
+        %Nodes
+        \node[roundnode](maintopic){0};
+        \node[roundnode](rightcirlce_0)[right=of maintopic]{0};
+        \node[roundnode](rightcirlce_2)[below=of rightcirlce_0]{2};
+        \node[roundnode](rightcirlce_5)[below=of rightcirlce_2]{5};
+        \node[roundnode](leftcirlce_2)[below=of maintopic]{2};
+        \node[roundnode](leftcirlce_5)[below=of leftcirlce_9]{5};
+        
+        %Lines
+        \draw[->] (maintopic.east) -- (rightcirlce_0.west);
+        \draw[->] (maintopic.east) -- (rightcirlce_2.west);
+        \draw[->] (maintopic.east) -- (rightcirlce_5.west);
+        \draw[->] (leftcirlce_2) -- (rightcirlce_0.south west);
+        \draw[->] (leftcirlce_5) -- (rightcirlce_0.south);
+
+    \end{tikzpicture}
 
     \item Matrix:\\
         $\begin{pNiceMatrix}[first-row,first-col]
@@ -123,7 +158,22 @@ If so, identify the equivalence classes.
     \\$\Rightarrow$ \{(1,1),(2,2),(6,6),(7,7),(11,11),(1,7),(7,1),(2,11),(11,2)\}\\
 
     \item Diagram:\\
+    \begin{tikzpicture}[roundnode/.style={circle, draw=blue!60, fill=blue!5, ultra thick, minimum size=7mm},]
+        %Nodes
+        \node[roundnode](maintopic){1};
+        \node[roundnode](leftcirlce)[below= of maintopic]{2};
+        \node[roundnode](leftcirlce)[below= of leftcirlce]{6};
+        \node[roundnode](leftcirlce)[below= of leftcirlce]{7};
+        \node[roundnode](leftcirlce)[below= of leftcirlce]{11};
+        \node[roundnode](rightcirlce)[right= of maintopic]{1};
+        \node[roundnode](rightcirlce)[below= of rightcirlce]{2};
+        \node[roundnode](rightcirlce)[below= of rightcirlce]{6};
+        \node[roundnode](rightcirlce)[below= of rightcirlce]{7};
+        \node[roundnode](rightcirlce)[below= of rightcirlce]{11};
 
+        %Lines
+        \draw[->](leftcirlce.east)--(rightcirlce.west);
+    \end{tikzpicture}
     \item Matrix:\\
         $\begin{pNiceMatrix}[first-row,first-col]
            & 1 & 2 & 6 & 7 & 11  \\
