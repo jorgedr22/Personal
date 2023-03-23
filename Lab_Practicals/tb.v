@@ -1,43 +1,58 @@
 `timescale 1ns / 1ps
 module tb();
-    reg A1_s,A2_s,B1_s,B2_s;
-    wire F,G;
-    
-    Prac_1 test(A1_s,A2_s,B1_s,B2_s,F,G);
+    reg b,clk,rst;
+    wire w;
 
-    initial 
-        begin
-            A1_s<=0;A2_s<=0;B1_s<=0;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=0;B1_s<=0;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=0;B1_s<=1;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=0;B1_s<=1;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=1;B1_s<=0;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=1;B1_s<=0;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=1;B1_s<=1;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=0;A2_s<=1;B1_s<=1;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=0;B1_s<=0;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=0;B1_s<=0;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=0;B1_s<=1;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=0;B1_s<=1;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=1;B1_s<=0;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=1;B1_s<=0;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=1;B1_s<=1;B2_s<=0;
-//                        $display("F=%b   G=%b",F,G); 
-            #10  A1_s<=1;A2_s<=1;B1_s<=1;B2_s<=1;
-//                        $display("F=%b   G=%b",F,G);       
-        end
+     Prac_2 tb(b,w,rst,clk);
+     
+always 
+    begin
+        clk=0;
+        #100;
+        clk=1;
+        #100; 
+    end
+
+initial 
+begin
+    
+    rst=1;b=1;
+    @(posedge clk);
+    
+    #50 rst=0;b=1;
+    @(posedge clk);    
+    
+    #50 b=0;
+    @(posedge clk);     
+    @(posedge clk);     
+    @(posedge clk);     
+
+    #50 b=1;
+    @(posedge clk);
+
+    #50 b=0;
+    @(posedge clk);     
+    @(posedge clk);     
+
+    #50 b=1;
+    @(posedge clk);
+    @(posedge clk);
+
+    #50 b=0;
+    @(posedge clk);
+
+    #50 b=1;
+    @(posedge clk);
+    
+    #50 b=0;
+    @(posedge clk);    
+    
+     #50 b=1;
+    @(posedge clk);
+    @(posedge clk);   
+    
+    #50 b=0;
+    @(posedge clk); 
+end
+
 endmodule
