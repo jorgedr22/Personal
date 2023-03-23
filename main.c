@@ -7,7 +7,6 @@
 #include <math.h>
 #include <assert.h>
 #include "functionDefine.h"
-#include <conio.h>
 
 int main(void) {
     FILE* inp;
@@ -69,8 +68,8 @@ int main(void) {
             playerDecks[i] = createHand(deck, &topDeck);
         }
         for (int i = 0; i < 1; i++) { // creates rest of cards in the hand
-            for (int i = 0; i < numPlayer; i++) {
-                addCard(deck, playerDecks[i], &topDeck);
+            for (int j = 0; j < numPlayer; j++) {
+                addCard(deck, playerDecks[j], &topDeck);
             }
         }
 
