@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{geometry}
+%\usepackage{fullpage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\parindent 0in
+
+\begin{document}
+
+
+\textbf{Math 243 -- Discrete Mathematics}\hfill\textbf{Homework 6 }\\[0.0625in]
+
+
+
+Please submit one set of well-written solutions per group.  Upload your completed solution set to Gradescope in PDF format. At the beginning of your document, include a brief statement of who contributed to the work.  Each solution should be written in paragraph form using complete sentences.  For each question, be sure to state any assumptions you have made and discuss your conclusions. 
+
+\medskip
+\begin{enumerate}
+
+\item In each question part below, I will list a set $S$ and a rule that defines a relation $R$ on $S$ as follows: $(m,n) \in R$ if $m$ and $n$ satisfy the given rule. For each set and rule, do the following five things:
+\begin{description}
+	\item[   i. ] List the ordered pairs in the relation.  
+	\item[ ii. ] Draw the associated arrow diagram.
+	\item[iii. ] Give the matrix representation of the relation.  Be sure to label the rows and columns with the elements of $S$. 
+	\item[iv. ] Identify which properties the relation has: reflexive, antireflexive, or neither; symmetric, antisymmetric, or neither; transitive or not transitive.  Be sure to explain your answers.
+	\item[ v. ] Decide whether the relation is an equivalence relation.  If so, identify the equivalence classes.
+
+\end{description}
+
+
+\begin{enumerate} 
+
+\item $S=\{4,9,17\}$;  $m \ge n$.
+\item $S=\{0,2,5\}$;  $mn=0$.
+\item $S=\{1,2,6,7,11\}$;  $m \equiv n$ (mod 3).
+\end{enumerate}
+\bigskip
+
+\item (adapted from zyBook \#5.2.5) Suppose $X$ is the set $\{a,b,c,d,e\}$ and $P(X)$ is the power set of $X$.  The domain of each of the relations below is $P(X)$. For each relation, describe the relation in words. Then determine whether it is reflexive, anti-reflexive, or neither; symmetric, anti-symmetric, or neither; and transitive or not transitive. 
+\begin{enumerate}
+\item $A$ is related to $B$ if $|A-B|=1$.  The vertical bars mean the cardinality of $A-B$.
+\item  $A$ is related to $B$ if $A \subset B$.  Note that this notation means proper subset.
+\end{enumerate}
+
+\item Determine whether the following relations are equivalence relations. If so, show that the relation fulfills the requirements for an equivalence relation, and describe the equivalence classes.  If not, show how the relation fails to fulfill the requirements.
+\begin{enumerate}
+\item The relation $\mathcal{C}$ is defined by $(x,y) \in \mathcal{C}$ iff $\cos x = \cos y$, where $x,y \in \R$.
+\item The relation $\propto$ on the domain $\Z^+ \times \Z^+$ is defined by $(m,n)\propto(p,q)$ iff $mq = np$. 
+\end{enumerate}
+
+
+\end{enumerate}
+\end{document} 
