@@ -289,7 +289,6 @@ If so, identify the equivalence classes.
 If so, show that the relation fulfills the requirements for an equivalence relation, 
 and describe the equivalence classes. If not, show how the relation fails to fulfill 
 the requirements.
-
 \begin{enumerate}
     \item The relation $\mathcal{C}$ is defined by $(x,y)\in \mathcal{C}$ iff cos($x$) = cos($y$), 
     where $x,y \in \R$.
@@ -305,8 +304,7 @@ the requirements.
 
         \item Transitivity:\\If $(x,y) \in \mathcal{C}$ and $(y,z) \in \mathcal{C}$, then $(x,z) \in \mathcal{C}$.\\
         Assume that $(x,y) \in \mathcal{C}$, $(y,z) \in \mathcal{C}$.$\therefore$\\
-        cos($x$) = cos($y$)\\
-        cos($y$) = cos($z$)\\
+        cos($x$) = cos($y$) and cos($y$) = cos($z$)\\
         This implies that cos($x$) = cos($z$) and $(x,z) \in \mathcal{C}$.\\$\textbf{Transitivity holds.}$\\
     \end{itemize}
     Therefore, it is an equivalence relation. The equivalence classes are:\\
@@ -318,9 +316,15 @@ the requirements.
         \item Symmetric:\\Let $(m,n)$ and $(p,q)$ are related then it implies $(p,q)$ and $(m,n)$ are related.\\Assume that $(m,n) \varpropto (p,q)$,
         this says that $mq = np$ and can be rewritten as $qm = pn$. Based on comunitive properties, $qm = pn$ can be rewritten as well as $pn = mq$ 
         which shows that $\textbf{symmetry holds}$.\\
-        \item Transitive:\\ Let $(a,b), (c,d) \in \Z^+\times\Z^+$ and $(c,d), (e,f) \in \Z^+\times\Z^+$ 
+        \item Transitive:\\ Let $(a,b), (c,d) \in \Z^+\times\Z^+$ and $(c,d), (e,f) \in \Z^+\times\Z^+$. This says that:\\ $(a,b), (c,d)$ is (ad) = (bc) and $(c,d), (e,f)$ is (cf) = (de)\\
+        Multipling the equations, we get: (ad)(cf) = (bc)(de)\\
+        Rearranging the values via comunitive properties: (af)(cd) = (be)(cd)\\
+        Divide by (cd), we obtain (af) = (be) and since $(a,b), (e,f) \in \Z^+\times\Z^+$, this proves 
+        that the relation is $\textbf{transitive}$.
     \end{itemize}
-    
+Therefore, it is an equivalence relation. The equivalence classes are:\\
+$\rightarrow$ If $a \in \R$, the equivalence classes will be $[m,n]$ = \{$(p,q) \in \Z^+\times\Z^+:(mq)=(np)$\}\\
+
 \end{enumerate}
 
 \end{enumerate}
