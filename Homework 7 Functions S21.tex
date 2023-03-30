@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{geometry}
+%\usepackage{fullpage}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\parindent 0in
+
+\begin{document}
+
+
+\textbf{Math 243 -- Discrete Mathematics}\hfill\textbf{Homework 7: Functions }\\[0.0625in]
+%\mbox{}\hfill{\textbf{Due Friday, July 24, 2020}}\\[0.125in]
+
+Please submit one set of well-written solutions per group.  Upload your completed solution set to Gradescope in PDF format. At the beginning of your document, include a brief statement of who contributed to the work.  Each solution should be written in paragraph form using complete sentences. For each question, be sure to state any assumptions you have made and discuss your conclusions. 
+
+\medskip
+\begin{enumerate}
+
+\item Consider the function $h:\mathbb{Z}^+ \to \mathbb{Z}^+$ defined by $h(n)=|\{k\in \Z^+ : k|n\}|$. The bars around the set mean that we are taking the size of the set. Thus $h(n)$ is the number of positive divisors of $n$. 
+\begin{enumerate}
+\item Make a table of values for $h(n)$ for $1\leq n \leq10$.  Write one or two sentences describing how you found the values in the table. 
+\item Find the value of $h(90)$. Explain how you found your answer. 
+\item Find the value of $h(2^m)$. The answer will be a simple formula involving $m$.
+\item Is $h$ a one-to-one function? Why or why not?
+\item Is $h$ an onto function? Why or why not?
+\item Describe the set $h^{\leftarrow}(2)$. Explain your reasoning. (The superscript left arrow means the preimage.)
+\end{enumerate}
+
+\item Consider the function $f:\R \times \R \to \R \times \R$ defined by $f(x,y)= (x+y,x-y)$. 
+\begin{enumerate}
+	\item Show that $f$ is one-to-one and onto.
+	\item Find the inverse function $f^{-1}(a,b)$.
+\end{enumerate} 
+
+\item Let $S =\{a,b,c,d\}$ and let $S^*$ be the set of all possible finite strings using letters from $S$. (Remember that strings can use repeated letters, and the order of the letters matters.)  Define the function $L(w) = $ the length of string $w$, where $w \in S^*$.
+\begin{enumerate}
+	\item Identify the domain, target (codomain), and range of $L$. (There is more than one reasonable target; pick your favorite.)
+%	\item Calculate $L(w)$ for the strings $w_1 = cbda$, $w_2 = \lambda$, and $w_3 = bababa$.  (Recall that $\lambda$ is the symbol for the null string.)
+	\item Is $L$ one-to-one?  Explain.
+	\item Find $L^{\leftarrow}(\{1,2\})$. 
+	\item Let $p$ be a function that turns any string into a palindrome by concatenating the string with its reverse.  For example, $p(ab) = abba$ and $p(\lambda)=\lambda$, where $\lambda$ denotes the null string. Is $p:S^* \to S^*$ well-defined?  Why or why not?  If not, change the domain and/or target to make $p$ well-defined.
+	\item Using your well-defined version of $p$, which of the compositions $p \circ L$  or $L \circ p$ is well-defined? Explain, and describe the domain and range of the well-defined function(s).
+\end{enumerate}
+
+\end{enumerate}
+\end{document} 
