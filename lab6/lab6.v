@@ -30,7 +30,7 @@ module Lab6(go, sum, data, done, Clk, Rst);
 
     always @(posedge Clk) begin
         if(Rst) begin
-            state = s0;
+            state = s0; // run a while loop to read all the values of the register before going to s0?
         end
         else begin
             case(state)
