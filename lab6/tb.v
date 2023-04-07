@@ -2,11 +2,11 @@
 
 module tb();
     reg go, Clk, Rst;
-    wire [5:0] count; 
+    wire [7:0] sum_tb,data_tb; 
     wire done;
-    wire temp2;
     
-    Lab6 Lab6_1(go, count, done, Clk, Rst,temp2);
+    Lab6 Lab6_1(go, sum_tb, data_tb, done, Clk, Rst);
+    
     
     always begin
     Clk <= 0;
