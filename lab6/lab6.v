@@ -86,9 +86,9 @@ end
             case(state)
             s0: begin   
                 while(i<16)begin
-                i = i + 1;
                 temp = R_data;
-                data = R_data;
+                data = temp;
+                i = i + 1;                
             end     
             end
             s1: begin
