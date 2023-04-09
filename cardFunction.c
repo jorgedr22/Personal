@@ -21,9 +21,9 @@ card createActive(card* deck, int* topDeck) {
 
 void shuffleCards(card* deck) {
     srand(time(NULL));
-    for (int j = 0; j < 108; j++) { //randomize cards
-        for (int i = 0; i < 108; i++) {
-            int r = rand() % 108;
+    for (int j = 0; j < 216; j++) { //randomize cards
+        for (int i = 0; i < 216; i++) {
+            int r = rand() % 216;
             card temp;
             temp = deck[i];
             deck[i] = deck[r];

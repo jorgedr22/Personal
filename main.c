@@ -39,18 +39,18 @@ int main(void) {
     scanf("%s", ans);
 
     while (strcmp(ans, "yes") == 0 || strcmp(ans, "Yes") == 0) {
-        system("cls");
+        system("clear");
         printf("\nPress [1] if you would you like to shuffle the deck.\n");
         printf("Otherwise, press [2] if you would like to use a pre-loaded a deck\n");
         scanf("%d", &ans2);
-        system("cls");
+        system("clear");
 
         while (ans2 != 1 && ans2 != 2) {
             printf("Invalid input\n");
             printf("Press [1] if you would you like to shuffle the deck.\n");
             printf("Otherwise, press [2] if you would like to use a pre-loaded a deck\n");
             scanf("%d", &ans2);
-            system("cls");
+            system("clear");
         }
 
         if (ans2 == 1) {
@@ -60,7 +60,7 @@ int main(void) {
 
         printf("How many players are playing today?\n");
         scanf("%d", &numPlayer);
-        system("cls");
+        system("clear");
 
         card* playerDecks[8] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
 
@@ -149,7 +149,7 @@ int main(void) {
                     valid = true;
                 }
             }
-            system("cls");
+            system("clear");
             k = incriment(rev, k, numPlayer);
         }
         printf("CONGRATULATIONS!!! You Win!!!\n\n");
