@@ -218,7 +218,7 @@ void printHand(card * hand, int c) {
         }
         else if (strcmp(hand->color, "black") == 0) {
             if (strcmp(hand->action, "wildFour")==0) {
-                char hand[8] = "wildFour";
+                char hand[9] = "wildFour";
                 printf("\033[38m-------------\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
@@ -228,7 +228,7 @@ void printHand(card * hand, int c) {
                 printf("\033[38m-------------\033[0m\n");
             }
             else if (strcmp(hand->action, "wildFour")==0) {
-                char hand[8] = "wildFour";
+                char hand[9] = "wildFour";
                 printf("\033[38m-------------\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
@@ -411,7 +411,7 @@ void printActive(card* active) {
         }
         else if (strcmp(active->color, "black") == 0) {
             if (strcmp(active->action, "wildFour") == 0) {
-                char hand[8] = "wildFour";
+                char hand[9] = "wildFour";
                 printf("\033[38m-------------\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
@@ -421,7 +421,7 @@ void printActive(card* active) {
                 printf("\033[38m-------------\033[0m\n");
             }
             else if (strcmp(active->action, "wildFour") == 0) {
-                char hand[8] = "wildFour";
+                char hand[9] = "wildFour";
                 printf("\033[38m-------------\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");
                 printf("\033[38m|           |\033[0m\n");

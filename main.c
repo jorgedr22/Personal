@@ -67,7 +67,7 @@ int main(void) {
         for (int i = 0; i < numPlayer; i++) { //creates first card in the hand
             playerDecks[i] = createHand(deck, &topDeck);
         }
-        for (int i = 0; i < 1; i++) { // creates rest of cards in the hand
+        for (int i = 0; i < 9; i++) { // creates rest of cards in the hand
             for (int j = 0; j < numPlayer; j++) {
                 addCard(deck, playerDecks[j], &topDeck);
             }
