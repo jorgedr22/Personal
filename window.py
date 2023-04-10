@@ -6,7 +6,7 @@ from tkinter.ttk import *
 
 
 class Wordle:
-    lives = 5   #lives to guess the word
+    lives = 0   #lives to guess the word
     count = 0   # if count == 5, You win    
     guess = {}  # keeps track of users guessed letters
     mystery_word = {} #random word chosed from words.txt
@@ -36,12 +36,12 @@ def startGame(event):
                     letters_guess = letters_guess[:((j%6)*2)] + letter + letters_guess[(((j%6)*2)+1):]
                     s1.count += 1
         else:
-            s1.lives -= 1
-        label_word.config(text=letters_guess)
+            s1.lives -= 1           
+            
+        label_word.config(text=f"{letters_guess}")
         lives_counter.config(text=f'{s1.lives}')
-        clear()
 
-def clear():
+def clear(event):
     letters_box.delete(0,END)            
                        
 # Driver Code
@@ -55,6 +55,7 @@ with open("words.txt","r+") as k:
         words = k.read()
 
 s1.rand = 6 * (random.randint(0,5757))
+s1.lives = 5
 
 # set the title
 jorge.title("Wordle")
@@ -84,8 +85,10 @@ startGame('go')
 jorge.bind('<Key>',startGame)
 
 #text box for inputing letters
-letters_box = Entry(jorge)
+letters_box = tkinter.Entry(jorge)
 letters_box.pack()
 
+jorge.bind('<Return>',clear)
 # start the GUI
 jorge.mainloop()
+
