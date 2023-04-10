@@ -1,5 +1,6 @@
 import random
-from os import system
+import os
+import sys
 from collections import OrderedDict
 import time
 import fireworks
@@ -22,7 +23,7 @@ def start_game(mystery_word,op):
         inp = input("Guess a letter:")
     
         if inp in mystery_word.values():
-            system("clear")
+            os.system("clear")
             for j in range(Op,Op+5):
                 if inp == mystery_word[j]:
                     string_letters = string_letters[:(j%6)] + inp + string_letters[((j%6)+1):]
@@ -51,10 +52,10 @@ def game():
     print("Welcome to Wordle!")
     rule = input("Would you like to read the rules of the game?")
     if rule.capitalize() == "Yes":
-        system('clear')
+        os.system('clear')
         rules_of_game(guess,op)
     else:
-        system('clear')        
+        os.system('clear')        
         start_game(guess,op)
 
 def rules_of_game(mystery_word,op):
@@ -62,13 +63,13 @@ def rules_of_game(mystery_word,op):
     start_game(mystery_word,op)
 
 while 1:
-    system('clear')
+    os.system('clear')
     start = input("Would you like to play wordle?\n")
 
     if start.capitalize() == "Yes":
-        system('clear')
+        os.system('clear')
         game() 
     else:
-        system('clear')
+        os.system('clear')
         print("See you later")
         break
