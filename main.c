@@ -7,7 +7,8 @@
 #include <math.h>
 #include <assert.h>
 #include "functionDefine.h"
-
+//gcc main.c cardFunction.c -o main <-- run this line terminal
+//./main <-- then this
 int main(void) {
     FILE* inp;
     char ans[5]; // answer if the user wants to play
@@ -27,8 +28,8 @@ int main(void) {
         return -1;
     }
     card* deck = NULL;
-    deck = (card*)malloc(108 * sizeof(card)); //allocates memory for deck
-    for (int i = 0; i < 108; i++) { //reads deck
+    deck = (card*)malloc(216 * sizeof(card)); //allocates memory for deck
+    for (int i = 0; i < 216; i++) { //reads deck
         fscanf(inp, "%s", deck[i].color);
         fscanf(inp, "%d", &deck[i].value);
         fscanf(inp, "%s", deck[i].action);
