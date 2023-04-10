@@ -1,35 +1,89 @@
+# import the modules
+import tkinter
+import random
+#import wordle as wd
+# function that will start the game.
 
-from tkinter import *
+class Wordle:
+    lives = 5   #lives to guess the word
+    count = 0   # if count == 5, You win    
+    guess = {}  # keeps track of users guessed letters
+    mystery_word = {} #random word chosed from words.txt
+         
+def startGame():
+    global s1
+    with ("words.txt","r+") as k:
+        words = k.read()
+      
+    letters_guess = "_ _ _ _ _"
+    
+    op = random.randint(0,5757)
+    op = op * 6
+    
+    for i in range((op*6),(op*6)+5):
+        s1.mystery_word[i] = words[i];
+    
+    while s1.lives>0:
+        if e.get().lower in s1.mystery_word.values():
+            a = e.get().lower
+            for j in range(op,op+5):
+                if a == s1.mystery_word[j]:
+                    letters_guess = letters_guess[:((j%6)*2)] + a + letters_guess[(((j%6)*2)+1):]
+                    s1.count += 1
+                    e.delete(0,tkinter.END)
+        else:
+            s1.lives -= 1
+            
+        label_word.config(text=letters_guess)
+            
+            
+    
+    
+    
+
+                 
+         
+# Driver Code
+# create a GUI window
+root = tkinter.Tk()
+global s1
+s1 = Wordle()
+# set the title
+root.title("Wordle")
  
-root = Tk()
-root.geometry("300x300")
-root.title(" Q&A ")
+# set the size
+root.geometry("375x200")
  
-def Take_input():
-    INPUT = inputtxt.get("1.0", "end-1c")
-    print(INPUT)
-    if(INPUT == "120"):
-        Output.insert(END, 'Correct')
-    else:
-        Output.insert(END, "Wrong answer")
-     
-l = Label(text = "What is 24 * 5 ? ")
-inputtxt = Text(root, height = 10,
-                width = 25,
-                bg = "light yellow")
+# add an instructions label
+instructions = tkinter.Label(root, text = "Guess a letter in the word!",font = ('Helvetica', 12))
+instructions.pack()
  
-Output = Text(root, height = 5,
-              width = 25,
-              bg = "light cyan")
+# start game label
+start_game = tkinter.Label(root, text = "Press enter to start",
+                                      font = ('Helvetica', 12))
+start_game.pack()
  
-Display = Button(root, height = 2,
-                 width = 20,
-                 text ="Show",
-                 command = lambda:Take_input())
+# add a lives left label
+lives_counter = tkinter.Label(root, text = f"Lives left: {s1.lives}", font = ('Helvetica', 12))
+               
+lives_counter.pack()
  
-l.pack()
-inputtxt.pack()
-Display.pack()
-Output.pack()
+# add a label for displaying the word
+label_word = tkinter.Label(root, font = ('Helvetica', 60))
+label_word.pack()
  
-mainloop()
+# add a text entry box for
+# typing in letters
+e = tkinter.Entry(root)
+ 
+
+# run the 'startGame' function
+# when the enter key is pressed
+root.bind('<Return>', startGame())
+e.pack()
+ 
+# set focus on the entry box
+e.focus_set()
+ 
+# start the GUI
+root.mainloop()
