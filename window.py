@@ -5,47 +5,47 @@ import random
 # function that will start the game.
 
 class Wordle:
-    lives = 5   #lives to guess the word
+    lives = 2   #lives to guess the word
     count = 0   # if count == 5, You win    
     guess = {}  # keeps track of users guessed letters
     mystery_word = {} #random word chosed from words.txt
          
 def startGame():
     global s1
-    with ("words.txt","r+") as k:
+    with open("words.txt","r+") as k:
         words = k.read()
-      
+        
     letters_guess = "_ _ _ _ _"
     
     op = random.randint(0,5757)
     op = op * 6
     
-    for i in range((op*6),(op*6)+5):
+    for i in range(op,op+5):
         s1.mystery_word[i] = words[i];
+    
+    print(str(s1.mystery_word))
     
     while s1.lives>0:
         if e.get().lower in s1.mystery_word.values():
-            a = e.get().lower
             for j in range(op,op+5):
-                if a == s1.mystery_word[j]:
-                    letters_guess = letters_guess[:((j%6)*2)] + a + letters_guess[(((j%6)*2)+1):]
+                if e.get().lower == s1.mystery_word[j]:
+                    letters_guess = letters_guess[:((j%6)*2)] + e + letters_guess[(((j%6)*2)+1):]
                     s1.count += 1
                     e.delete(0,tkinter.END)
+                    #label_word.config(text=letters_guess)
+                    print(letters_guess)
         else:
             s1.lives -= 1
-            
-        label_word.config(text=letters_guess)
-            
-            
-    
-    
-    
+            e.delete(0,tkinter.END)
+            #label_word.config(text=letters_guess)
+            print(letters_guess)
 
-                 
-         
+            
+                       
 # Driver Code
 # create a GUI window
 root = tkinter.Tk()
+
 global s1
 s1 = Wordle()
 # set the title
