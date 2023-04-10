@@ -2,12 +2,14 @@ import pygame
 import time
 import random
 import math
+import sys
 pygame.init()
 
 WIDTH, HEIGHT = 800, 600
 
 win = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Fireworks!")
+pygame.display.set_caption("You win!!!!")
+
 
 FPS = 60
 
@@ -179,7 +181,7 @@ def draw(launchers):
 
     for launcher in launchers:
         launcher.draw(win)
-
+    
     pygame.display.update()
 
 
@@ -209,3 +211,4 @@ def start():
 
 if __name__ == '__main__':
    start()
+   
