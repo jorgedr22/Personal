@@ -3,6 +3,8 @@ from os import system
 from collections import OrderedDict
 import time
 import fireworks
+import pygame
+pygame.init()
 def start_game(mystery_word,op):
     print("The word is:\n")
     print('_ _ _ _ _')

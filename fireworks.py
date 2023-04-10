@@ -2,7 +2,6 @@ import pygame
 import time
 import random
 import math
-import wordle
 pygame.init()
 
 WIDTH, HEIGHT = 800, 600
