@@ -1,22 +1,14 @@
-# Import all files from
-# tkinter and overwrite
-# all the tkinter files
-# by tkinter.ttk
 from tkinter import *
-from tkinter.ttk import *
-
-# function to be called when
-# keyboard buttons are pressed
-def key_press(event):
-	key = event.char
-	print(key, 'is pressed')
-
-# creates tkinter window or root window
+from random import randint
 root = Tk()
-root.geometry('200x100')
+lab = Entry(root)
+lab.pack()
 
-# here we are binding keyboard
-# with the main window
-root.bind('<Key>', key_press)
+def update():
+   lab['text'] = randint(0,1000)
+   root.after(1000, update) # run itself again after 1000 ms
 
-mainloop()
+# run first time
+update()
+
+root.mainloop()
