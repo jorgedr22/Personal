@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{geometry}
+%\usepackage{fullpage}
+
+\renewcommand{\mod}{\texttt{ MOD }}
+\renewcommand{\div}{\texttt{ DIV }}
+\newcommand{\ttwhile}{\texttt{while }}
+\newcommand{\ttbegin}{\texttt{begin }}
+\newcommand{\ttend}{\texttt{end }}
+\newcommand{\ttfor}{\texttt{for }}
+\newcommand{\ttreturn}{\texttt{return }}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+
+\noindent\textbf{Math 243 -- Discrete Mathematics}\hfill\textbf{Homework 9: Sequences, Sums, and Induction }\\[0.0625in]
+%\mbox{}\hfill{\textbf{Due Friday, August 7, 2020}}\\
+
+\noindent For each problem below, please submit one set of well-written solutions per group.  Each solution should be written in paragraph form using complete sentences. Be sure to include every contributor's name on your document.  Do not include the names of people who do not contribute to the group's work; they may submit their own solutions individually. Upload the final document to Gradescope in PDF format.
+
+
+\begin{enumerate} 
+
+\item Prove by induction:
+\begin{enumerate}
+\item $\sum_{j=n}^{2n-1} j = \frac{n(3n-1)}{2} \quad \forall n \in \Z^+.$
+\item $2n+1 < n^2 \quad \forall n \ge 3, n \in \Z^+.$
+\item $4|(11^n - 7^n) \quad \forall n \in \N.$
+\end{enumerate}
+
+
+\item Discuss the following proof.  Is it valid?  Why or why not?  What, if anything, would you change about either the proof or the proposition to make this a clear, valid proof of a non-trivial true statement?
+
+\begin{quotation}
+	\noindent We want to prove that $n^2 + n + 1$ is even $\forall n \in \N$.  Assume that the statement is true for some natural number $k$. Then
+	\begin{equation*}
+	\begin{array}{rcl}
+		(k+1)^2 + (k+1) + 1 &=& k^2 + 2k + 1 + k + 2 \\
+		&=& k^2 + k + 1 + 2k + 2. 
+	\end{array}
+	\end{equation*}
+	
+	\noindent The sum of the first three terms is even by the inductive hypothesis, and the last two terms are even because they are each divisible by 2.  Thus $(k+1)^2 + (k+1) + 1$ is even.  By induction, this proves that $n^2 + n + 1$ is even $\forall n \in \N$.	 
+\end{quotation}
+
+\item Recursively define $a_{0}=2, a_{1}=-1,$ and $a_{n}=-a_{n-1}+6a_{n-2}$
+for $n\geq2.$
+
+\begin{enumerate}
+	\item Calculate $a_{4}$ recursively.
+	\item Prove by induction that for all $i \in \Z^+$, the term $a_{i}$ is odd. 
+	\item Find an explicit (closed form) formula for $a_n$.  (Hint: solve the characteristic equation.)
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document} 

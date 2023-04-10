@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{geometry}
+%\usepackage{fullpage}
+
+\renewcommand{\mod}{\texttt{ MOD }}
+\renewcommand{\div}{\texttt{ DIV }}
+\newcommand{\ttwhile}{\texttt{while }}
+\newcommand{\ttbegin}{\texttt{begin }}
+\newcommand{\ttend}{\texttt{end }}
+\newcommand{\ttfor}{\texttt{for }}
+\newcommand{\ttreturn}{\texttt{return }}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+
+\noindent\textbf{Math 243 -- Discrete Mathematics}\hfill\textbf{Homework 8: Algorithms }\\[0.0625in]
+%\mbox{}\hfill{\textbf{Due Friday, November 6, 2020}}\\
+
+For each problem below, please submit one set of well-written solutions per group.  Each solution should be written in paragraph form using complete sentences. Be sure to include every contributor's name on your document.  Do not include the names of people who do not contribute to the group's work; they may submit their own solutions individually. Upload the final document to Gradescope in PDF format.
+
+
+\begin{enumerate} 
+
+\item For each function defined below, find the value of $k$ such that $s(n)=\Theta(n^{k})$. For part (a), justify your answer from the definitions of $\Theta$, $O$, and $\Omega$ by finding explicit constants that work, following the examples in Proofs 7.2.1 and 7.2.3 in the zyBook. Don't just refer to Theorem 7.2.2. For part (b), you do not need to find explicit constants, just explain why your answer is correct.  
+
+\begin{enumerate}
+\item $s(n)=(2n+1)(5n^{2}+1)$
+\item $s(n)=n^{3}t(n)+n^{5}$ where $t(n)=\Theta(n^{b})$ (Hint: answer in
+terms of $b$.)
+\end{enumerate}
+
+\item With an input of size $n$, algorithm A requires $1000\sqrt{n}$ operations
+and algorithm B requires $5n$ operations. 
+
+\begin{enumerate}
+\item Which algorithm is more efficient in the long run?  Remember, ``more efficient" means ``uses fewer operations".
+\item For which values of $n$ is algorithm A at least as efficient as algorithm B?  (Give your answer as an inequality.)
+\item For which $n$ is algorithm B at least twice as efficient as algorithm A? (Again, give your answer as an inequality.)
+\end{enumerate}
+
+\item Below is an algorithm. 
+\begin{quote}
+\{Input: a number $b$ and a positive integer $n\}$\\
+:$\,\texttt{begin}$\\
+:$\, p:=1$\\
+:$\, q:=b$\\
+:$\, i:=n$\\
+:$\:\texttt{while}$ $i>0$ $\texttt{do}$\\
+:$\qquad\texttt{if } i$ \mod 2 = 1 \\
+:$\qquad \qquad p:=p\cdot q$\\
+:$\qquad \ttend$ \{if\} \\
+:$\qquad$\{Do the next two steps whether or not $i$ is odd.\}\\
+:$\qquad q:=q\cdot q$\\
+:$\qquad i:= \texttt{floor}(i/2)$\\
+:$\texttt{end }$ \{while\} \\
+:$\:\texttt{return }p$\\
+:$\texttt{end }$
+\end{quote}
+
+\begin{enumerate}
+\item What does this algorithm do?  That is, what is the final output?
+\item Find a simple function $g(n)$ such that the number of passes through the loop is $\Theta(g)$. Explain your answer.
+\item How many passes does the algorithm make through the loop for $n=3, n=2^{100}$ and $n=3\cdot2^{100}$?  Justify your answers.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document} 
