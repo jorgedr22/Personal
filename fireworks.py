@@ -2,6 +2,7 @@ import pygame
 import time
 import random
 import math
+import wordle
 pygame.init()
 
 WIDTH, HEIGHT = 800, 600
@@ -183,7 +184,7 @@ def draw(launchers):
     pygame.display.update()
 
 
-def main():
+def start():
     run = True
     clock = pygame.time.Clock()
 
@@ -208,4 +209,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+   start()

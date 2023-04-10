@@ -2,7 +2,7 @@ import random
 from os import system
 from collections import OrderedDict
 import time
-
+import fireworks
 def start_game(mystery_word,op):
     print("The word is:\n")
     print('_ _ _ _ _')
@@ -30,15 +30,11 @@ def start_game(mystery_word,op):
             print("Life lost! Lives left:"+str(trys)+"\n")
                         
         print("The word is:\n" + string_letters)
-        
         if(count == 5):
-            break
-    if(count==5):
-        print("You did it!")
-        time.sleep(10)
-    else:
-        print("You lost!")
-        time.sleep(10)
+            fireworks.start()
+            
+    print("You lost!")
+    time.sleep(10)
                 
 def game():
     with open("words.txt") as w:
