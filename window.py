@@ -6,40 +6,45 @@ from tkinter.ttk import *
 
 
 class Wordle:
-    lives = 5   #lives to guess the word
+    lives = 2   #lives to guess the word
     count = 0   # if count == 5, You win    
     mystery_word = {} #random word chosed from words.txt
+    word = ""
     rand = 0 #random word gen
+    temp = ""
          
 def startGame(event):
     global s1    
-    
     global letters_guess
     
-    lives = s1.lives
     letter = event.char
+    
     
     if len(str(letter)) > 2:
         wrong = tkinter.Label(jorge, text = "One letter at a time",font = ('Helvetica', 12))
         wrong.pack()
-    elif letter == "":
+    
+    
+    elif event.keysym == "Return" and s1.temp in s1.mystery_word.values():
+        for j in range(0,5):
+            if s1.temp == s1.mystery_word[j]:
+                letters_guess = letters_guess[:(j*2)] + s1.temp + letters_guess[(j*2)+1:]
+                s1.count = s1.count + 1
         label_word.config(text=letters_guess)
-        letters_box.delete(0,3)
-    else:
-        print(f"{letter} was pressed")
-        # for i in range(s1.rand,(s1.rand)+5):
-        #     s1.mystery_word[(i%6)] = words[i];
+        letters_box.delete(0,END)
         
-        if letter in s1.mystery_word.values():
-            for j in range(0,5):
-                if letter == s1.mystery_word[j]:
-                    letters_guess = letters_guess[:(j*2)] + letter + letters_guess[(j*2)+1:]
-                    s1.count = s1.count + 1
-        else:
-            lives = lives - 1
-            lives_counter.config(text = f"Lives left: {lives}")
-
-                             
+    elif event.keysym == "Return" and s1.temp not in s1.mystery_word.values():
+        label_word.config(text=letters_guess)
+        s1.lives -= 1
+        lives_counter.config(text=f'Lives left: {s1.lives}')
+        letters_box.delete(0,END)
+        if s1.lives == 0:
+            label_word.config(text="You lose!\nThe word was\n"+s1.word)
+                
+                
+    elif letter:
+        s1.temp = letter
+                 
 # Driver Code
 # create a GUI window
 jorge = Tk()
@@ -57,22 +62,26 @@ s1.rand = 6 * (random.randint(0,5757))
 
 for i in range(s1.rand,(s1.rand)+5):
     s1.mystery_word[(i%6)] = words[i];
+
+for i in range(s1.rand,(s1.rand)+5):
+    s1.word = s1.word[:(i%6)] + str(words[i]) + s1.word[(i%6)+1:]
     
-print(s1.mystery_word)
+print(s1.word)
+
 
 # set the title
 jorge.title("Wordle")
  
 # set the size
-jorge.geometry("375x200")
+jorge.geometry("500x500")
  
 # add an instructions label
-instructions = tkinter.Label(jorge, text = "Guess a letter in the word!",font = ('Helvetica', 12))
+instructions = tkinter.Label(jorge, text = "Guess a letter in the word!",font = ('Helvetica', 18))
 instructions.pack()
 
  
 # add a lives left label
-lives_counter = Label(jorge, text = f"Lives left: {s1.lives}", font = ('Helvetica', 12))   
+lives_counter = Label(jorge, text = f"Lives left: {s1.lives}", font = ('Helvetica', 18))   
 lives_counter.pack()
  
 # add a label for displaying the word
@@ -81,6 +90,7 @@ label_word.pack()
  
 #text box for inputing letters
 letters_box = tkinter.Entry(jorge)
+letters_box.focus_set()
 letters_box.pack()
 
 jorge.bind('<Key>',startGame)
