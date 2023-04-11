@@ -35,6 +35,9 @@ def startGame(event):
                 s1.count = s1.count + 1
         label_word.config(text=letters_guess)
         letters_box.delete(0,END)
+        if s1.count == 5:
+            with open("/Users/jorgedelriocuriel/Desktop/Personal/fireworks.py") as k:
+                exec(k.read())
         
     elif event.keysym == "Return" and s1.temp not in s1.mystery_word.values(): #submit a guess and the guess is not in the word 
         label_word.config(text=letters_guess)
@@ -47,15 +50,6 @@ def startGame(event):
     elif event.keysym == "Return": # only press enter
         print("")
     
-    elif s1.count == 5:
-        # Get the current process ID
-        pid = os.getpid()
-
-        # Kill the current process
-        os.kill(pid, 9)
-
-        # Call the new program using subprocess
-        subprocess.call(['python3', 'fireworks.py'])            
     elif letter:
         s1.temp = letter
         
