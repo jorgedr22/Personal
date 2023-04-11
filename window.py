@@ -8,7 +8,10 @@ import os
 import pygame
 import time
 import math
-
+# ADD FEATURES:
+# - INPUT WORD NOT LETTERS
+# - ADD BOXES TO INDICATE LETTER APPEARANCE AND/OR CORRECT INDEX
+# - ADD SAD TRUMPET SOUND EFFECT IF LOSE
 def start():
     pygame.init()
 
