@@ -55,7 +55,7 @@ def startGame(event):
         os.kill(pid, 9)
 
         # Call the new program using subprocess
-        subprocess.call(['python', 'fireworks.py'])            
+        subprocess.call(['python3', 'fireworks.py'])            
     elif letter:
         s1.temp = letter
         
