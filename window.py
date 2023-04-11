@@ -17,31 +17,28 @@ def startGame(event):
     global letters_guess
     
     lives = s1.lives
-    letter = ""
+    letter = event.char
     
-    if event == "<Return>" or event == "": 
-        clear("")
+    if len(str(letter)) > 2:
+        wrong = tkinter.Label(jorge, text = "One letter at a time",font = ('Helvetica', 12))
+        wrong.pack()
+    elif letter == "":
+        label_word.config(text=letters_guess)
+        letters_box.delete(0,3)
     else:
-        letter = str(event)
         print(f"{letter} was pressed")
-        for i in range(s1.rand,(s1.rand)+5):
-            s1.mystery_word[(i%6)] = words[i];
+        # for i in range(s1.rand,(s1.rand)+5):
+        #     s1.mystery_word[(i%6)] = words[i];
         
         if letter in s1.mystery_word.values():
             for j in range(0,5):
                 if letter == s1.mystery_word[j]:
-                    letters_guess = letters_guess[:(j*2)] + str(letter) + letters_guess[(j*2)+1:]
+                    letters_guess = letters_guess[:(j*2)] + letter + letters_guess[(j*2)+1:]
                     s1.count = s1.count + 1
-        elif letter not in s1.mystery_word.values():
+        else:
             lives = lives - 1
-    
-        print(letters_guess)
-        print(f'lives: {lives}')
+            lives_counter.config(text = f"Lives left: {lives}")
 
-        
-
-def clear(ans):
-    return letters_box.delete(0,END) 
                              
 # Driver Code
 # create a GUI window
@@ -56,8 +53,12 @@ letters_guess = "_ _ _ _ _"
 with open("words.txt","r+") as k:
         words = k.read()
 
-#s1.rand = 6 * (random.randint(0,5757))
-s1.rand = 6
+s1.rand = 6 * (random.randint(0,5757))
+
+for i in range(s1.rand,(s1.rand)+5):
+    s1.mystery_word[(i%6)] = words[i];
+    
+print(s1.mystery_word)
 
 # set the title
 jorge.title("Wordle")
@@ -68,29 +69,21 @@ jorge.geometry("375x200")
 # add an instructions label
 instructions = tkinter.Label(jorge, text = "Guess a letter in the word!",font = ('Helvetica', 12))
 instructions.pack()
- 
-# start game label
-start_game = tkinter.Label(jorge, text = "Press enter to start",font = ('Helvetica', 12))
-start_game.pack()
+
  
 # add a lives left label
 lives_counter = Label(jorge, text = f"Lives left: {s1.lives}", font = ('Helvetica', 12))   
 lives_counter.pack()
  
 # add a label for displaying the word
-label_word = tkinter.Label(jorge, font = ('Helvetica', 60))
+label_word = tkinter.Label(jorge, text=letters_guess, font = ('Helvetica', 60))
 label_word.pack()
  
 #text box for inputing letters
 letters_box = tkinter.Entry(jorge)
 letters_box.pack()
- 
-startGame("")
-jorge.bind("<Key>",startGame)
-# startGame("e")
-# startGame("t")
-# startGame("h")
-# startGame("r")
+
+jorge.bind('<Key>',startGame)
 
 # start the GUI
 jorge.mainloop()
