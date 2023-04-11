@@ -14,9 +14,11 @@ class Wordle:
 def startGame(event):
     global s1    
     
-    letters_guess = "_ _ _ _ _"
+    global letters_guess
+    
     lives = s1.lives
     letter = ""
+    
     if event == "<Return>" or event == "": 
         clear("")
     else:
@@ -25,20 +27,17 @@ def startGame(event):
         for i in range(s1.rand,(s1.rand)+5):
             s1.mystery_word[(i%6)] = words[i];
         
-        #print(s1.mystery_word.items())
-        
-        
         if letter in s1.mystery_word.values():
             for j in range(0,5):
                 if letter == s1.mystery_word[j]:
                     letters_guess = letters_guess[:(j*2)] + str(letter) + letters_guess[(j*2)+1:]
                     s1.count = s1.count + 1
-                    print(letters_guess)
-                    print(f'lives: {lives}')
         elif letter not in s1.mystery_word.values():
-            print(letters_guess)
             lives = lives - 1
-            print(f'lives: {lives}')
+    
+        print(letters_guess)
+        print(f'lives: {lives}')
+
         
 
 def clear(ans):
@@ -51,11 +50,15 @@ jorge = Tk()
 global s1
 s1 = Wordle()
 
+global letters_guess
+letters_guess = "_ _ _ _ _"
+
 with open("words.txt","r+") as k:
         words = k.read()
 
 #s1.rand = 6 * (random.randint(0,5757))
 s1.rand = 6
+
 # set the title
 jorge.title("Wordle")
  
@@ -83,7 +86,11 @@ letters_box = tkinter.Entry(jorge)
 letters_box.pack()
  
 startGame("")
-jorge.bind('<Key>',startGame)
+jorge.bind("<Key>",startGame)
+# startGame("e")
+# startGame("t")
+# startGame("h")
+# startGame("r")
 
 # start the GUI
 jorge.mainloop()
