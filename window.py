@@ -94,8 +94,7 @@ def start():
                 x_vel = math.sin(current_angle) * vel
                 y_vel = math.cos(current_angle) * vel
                 color = random.choice(COLORS)
-                self.projectiles.append(Projectile(
-                    self.x, self.y, x_vel, y_vel, color))
+                self.projectiles.append(Projectile(self.x, self.y, x_vel, y_vel, color))
                 current_angle += angle_dif
 
         def create_star_projectiles(self):
@@ -202,18 +201,17 @@ def start():
             clock.tick(FPS)
 
             for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    run = False
-                    restart_program()
-                    break
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
+                        run = False
+                        break
 
             for launcher in launchers:
                 launcher.loop(WIDTH, HEIGHT)
 
             draw(launchers)
-
-        #pygame.quit()
-        #quit()
+        restart_program()    
+        
     start_firework()  
 
 class Wordle:
