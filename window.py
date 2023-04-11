@@ -242,8 +242,8 @@ def startGame(event):
                 letters_guess = letters_guess[:(j*2)] + s1.temp + letters_guess[(j*2)+1:]
                 s1.count = s1.count + 1
         label_word.config(text=letters_guess)
-        letters_box.delete(0,END)
-                
+        letters_box.delete(0,END)  
+           
     elif event.keysym == "Return" and s1.temp not in s1.mystery_word.values(): #submit a guess and the guess is not in the word 
         label_word.config(text=letters_guess)
         s1.lives -= 1
@@ -253,14 +253,15 @@ def startGame(event):
             label_word.config(text="You lose!\nThe word was\n"+s1.word)
             
     elif event.keysym == "Return": # only press enter
-        print("")
+        return
     
     elif letter:
         s1.temp = letter
         
-    if s1.count == 5:
-        time.sleep(3)
+    if event.keysym == "Return" and letters_guess.replace(" ","") == s1.word:
+        label_word.config(text=letters_guess)
         start()
+        
         
 def restart_program():
     os.system("clear")  
