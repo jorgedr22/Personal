@@ -5,8 +5,6 @@ from tkinter import *
 from tkinter.ttk import *
 import sys
 import os
-import subprocess
-import signal
 
 class Wordle:
     lives = 5   #lives to guess the word

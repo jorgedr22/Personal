@@ -208,6 +208,4 @@ def start():
     pygame.quit()
     quit()
 
-
 start()
-   
