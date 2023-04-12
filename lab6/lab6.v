@@ -15,22 +15,21 @@ module Lab6(go, sum, data, done, Clk, Rst);
                    s3=3, 
                    s4=4, 
                    s5=5, 
-                   s6=6,
-                   s7=7; 
+                   s6=6;
 
     
     reg [3:0] state;
     reg [7:0] temp;
-    reg  W_en;
+    reg R_en, W_en;
     reg [7:0] W_data;
-    reg [3:0] i;
+    integer i;
 
     
-    RegFile16x8 a1(i, i, 1, W_en, R_data, W_data, Clk, Rst);
+    RegFile16x8 a1(i, i, R_en, W_en, R_data, W_data, Clk, Rst,debug_Reg0,debug_Reg1,debug_Reg2,debug_Reg3,debug_Reg4,debug_Reg5,debug_Reg6,debug_Reg7,debug_Reg8,debug_Reg9,debug_Reg10,debug_Reg11,debug_Reg12,debug_Reg13,debug_Reg14,debug_Reg15);
 
     always @(posedge Clk) begin
         if(Rst) begin
-            state <= s0;// run a while loop to read all the values of the register before going to s0?
+            state <= s0;
         end
         else begin
             case(state)
@@ -39,83 +38,55 @@ module Lab6(go, sum, data, done, Clk, Rst);
                     state <= s0;
                 end
                 else if(go) begin
+                    i <= 0;
+                    done <= 0;
+                    sum <= 0;
+                    R_en <= 0;
+                    W_en <= 0;
                     state <= s1;
                 end
             end
             s1: begin
-                state <= s2;
+                if(i<16)begin
+                    R_en <= 1;
+                    state <= s2; 
+                end
+                else begin
+                    done <= 1;
+                    state <= 6;
+                end
             end
             s2: begin
-                if(i<16)begin
-                    state <= s3;
-                end
-                else if(~(i<16))begin
-                    state <= s7;
-                end
+                temp <= R_data;
+                state <= s3;
             end            
             s3: begin
-                if(temp>47)begin
+                if ((temp>47) && (temp<58))begin
+                    W_en <= 1;
+                    R_en <= 0;
+                    W_data <= (temp - 48);
                     state <= s4;
                 end
-                else if(~(temp>47))begin 
-                    state <= s6;
+                else if(~((temp>47) && (temp<58)))begin
+                    state <= s5;
                 end
             end            
             s4: begin
-                if(temp<58)begin
-                    state <= s5;
-                end
-                else if(~(temp<58))begin
-                    state <= s6;
-                end
+                sum <= sum + (temp - 48);
+                data <= W_data;
+                state <= s5;
             end
             s5: begin
-                state <= s6;
+                W_en <= 0;
+                i <= i + 1;
+                state <= s1;
             end            
             s6: begin
-                state <= s2;
-            end             
-            s7: begin
+                done <=0;
                 state <= s0;
-            end                   
+            end                                
         endcase
     end
 end
 
-    always @(*) begin
-            case(state)
-            s0: begin   
-                while(i<16)begin
-                    temp <= R_data;
-                    data <= temp;
-                    i <= i + 1;                
-            end     
-            end
-            s1: begin
-                done <= 0;
-                sum <= 0;
-                i <= 0; 
-            end
-            s2: begin
-            end            
-            s3: begin
-                temp <= R_data;
-                data <= R_data;
-            end            
-            s4: begin
-            end
-            s5: begin
-               W_en <= 1;
-               W_data <= (temp - 48); 
-               sum <= (sum + W_data);
-            end            
-            s6: begin
-               W_en <= 0;            
-               i <= i + 1;
-            end             
-            s7: begin
-                done <= 1;
-            end                   
-        endcase
-    end    
 endmodule
