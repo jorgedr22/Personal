@@ -8,6 +8,7 @@ import os
 import pygame
 import time
 import math
+pygame.mixer.init()
 # ADD FEATURES:
 # - INPUT WORD NOT LETTERS
 # - ADD BOXES TO INDICATE LETTER APPEARANCE AND/OR CORRECT INDEX
@@ -252,6 +253,8 @@ def startGame(event):
         letters_box.delete(0,END)
         if s1.lives == 0:
             label_word.config(text="You lose!\nThe word was\n"+s1.word)
+            pygame.mixer.music.load("sadtrombone.swf.mp3")
+            pygame.mixer.music.play(loops=0)
             
     elif event.keysym == "Return": # only press enter
         return
@@ -261,6 +264,8 @@ def startGame(event):
         
     if event.keysym == "Return" and letters_guess.replace(" ","") == s1.word:
         label_word.config(text=letters_guess)
+        pygame.mixer.music.load("celebrate.mp3")
+        pygame.mixer.music.play(loops=0)
         start()
         
         
