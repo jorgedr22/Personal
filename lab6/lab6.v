@@ -30,53 +30,53 @@ module Lab6(go, sum, data, done, Clk, Rst);
 
     always @(posedge Clk) begin
         if(Rst) begin
-            state = s0;// run a while loop to read all the values of the register before going to s0?
+            state <= s0;// run a while loop to read all the values of the register before going to s0?
         end
         else begin
             case(state)
             s0: begin
                 if(~go)begin
-                    state = s0;
+                    state <= s0;
                 end
                 else if(go) begin
-                    state = s1;
+                    state <= s1;
                 end
             end
             s1: begin
-                state = s2;
+                state <= s2;
             end
             s2: begin
                 if(i<16)begin
-                    state = s3;
+                    state <= s3;
                 end
                 else if(~(i<16))begin
-                    state = s7;
+                    state <= s7;
                 end
             end            
             s3: begin
                 if(temp>47)begin
-                    state = s4;
+                    state <= s4;
                 end
                 else if(~(temp>47))begin 
-                    state = s6;
+                    state <= s6;
                 end
             end            
             s4: begin
                 if(temp<58)begin
-                    state = s5;
+                    state <= s5;
                 end
                 else if(~(temp<58))begin
-                    state = s6;
+                    state <= s6;
                 end
             end
             s5: begin
-                state = s6;
+                state <= s6;
             end            
             s6: begin
-                state = s2;
+                state <= s2;
             end             
             s7: begin
-                state = s0;
+                state <= s0;
             end                   
         endcase
     end
@@ -86,35 +86,35 @@ end
             case(state)
             s0: begin   
                 while(i<16)begin
-                temp = R_data;
-                data = temp;
-                i = i + 1;                
+                    temp <= R_data;
+                    data <= temp;
+                    i <= i + 1;                
             end     
             end
             s1: begin
-                done = 0;
-                sum = 0;
-                i = 0; 
+                done <= 0;
+                sum <= 0;
+                i <= 0; 
             end
             s2: begin
             end            
             s3: begin
-                temp = R_data;
-                data = R_data;
+                temp <= R_data;
+                data <= R_data;
             end            
             s4: begin
             end
             s5: begin
-               W_en = 1;
-               W_data = (temp - 48); 
-               sum = (sum + W_data);
+               W_en <= 1;
+               W_data <= (temp - 48); 
+               sum <= (sum + W_data);
             end            
             s6: begin
-               W_en = 0;            
-               i = i + 1;
+               W_en <= 0;            
+               i <= i + 1;
             end             
             s7: begin
-                done = 1;
+                done <= 1;
             end                   
         endcase
     end    
