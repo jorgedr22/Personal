@@ -22,7 +22,7 @@ def start():
     pygame.display.set_caption("You won!!!!")
 
 
-    FPS = 120
+    FPS = 480
 
     COLORS = [
         (255, 0, 0),
@@ -253,8 +253,8 @@ def startGame(event):
         letters_box.delete(0,END)
         if s1.lives == 0:
             label_word.config(text="You lose!\nThe word was\n"+s1.word)
-            pygame.mixer.music.load("sadtrombone.swf.mp3")
-            pygame.mixer.music.play(loops=0)
+            # pygame.mixer.music.load("sadtrombone.swf.mp3")
+            # pygame.mixer.music.play(loops=0)
             
     elif event.keysym == "Return": # only press enter
         return
@@ -264,8 +264,8 @@ def startGame(event):
         
     if event.keysym == "Return" and letters_guess.replace(" ","") == s1.word:
         label_word.config(text=letters_guess)
-        pygame.mixer.music.load("Hall_of_Fame.mp3")
-        pygame.mixer.music.play(loops=0)
+        # pygame.mixer.music.load("celebrate.mp3")
+        # pygame.mixer.music.play(loops=0)
         start()
         
         
