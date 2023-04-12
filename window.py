@@ -264,7 +264,7 @@ def startGame(event):
         
     if event.keysym == "Return" and letters_guess.replace(" ","") == s1.word:
         label_word.config(text=letters_guess)
-        pygame.mixer.music.load("celebrate.mp3")
+        pygame.mixer.music.load("Hall_of_Fame.mp3")
         pygame.mixer.music.play(loops=0)
         start()
         
