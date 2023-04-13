@@ -25,6 +25,13 @@
 
 \noindent\textbf{Math 243 Discrete Mathematics \hfill Homework 6}
 
+For this homework everyone contruibuted ideas about how to go about the relations. Jorge was responible for the diagrams and maxtix. 
+Emma worked on qustion 1, Matthew worked on qustion 2 and Lucas on question 3. We all meet up a day before submitting to combine our questions and made
+sure that everyone understood the answer. 
+
+
+\pagebreak
+
 \begin{enumerate}
     \item In each question part below, I will list a set $\mathit{S}$ and 
     a rule that defines a relation $\mathit{R}$ on $\mathit{S}$ as follows: 
@@ -100,7 +107,7 @@ If so, identify the equivalence classes.
             \end{itemize}
             \item R is transitive. As if (a,b)$\in R$ and (b,c)$\in R$ then (a,c)$\in R$ holds. $\therefore a,b,c \in S$  
         \end{itemize}
-        \item R is not an equivalence relation based on the reasons mentioned above.
+        \item R is not an equivalence relation because R is not symmetric.
     \end{multicols} 
 \end{itemize}
 
@@ -131,7 +138,7 @@ If so, identify the equivalence classes.
 
     \end{tikzpicture}
 
-    \item Matrix:\\
+
         $\begin{bNiceMatrix}[first-row,first-col]
            & 0 & 2 & 5        \\
         0  & 1 & 1 & 1        \\ 
@@ -146,6 +153,7 @@ If so, identify the equivalence classes.
 
     \item \begin{itemize}
        \item R is not reflexive as $(2,2) \notin R$ 
+       \item R is not antireflexive since 0 points to itself
        \item R is symmetric as (0,2) $\in R$ and (2,0) $\in R$
         \item R is not transitive. Because (2,0) and (0,5) $\in R$ but (2,5) $\notin R$  
      \end{itemize}
@@ -186,7 +194,6 @@ If so, identify the equivalence classes.
             \draw[->](leftcirlce_11.east)--(rightcirlce_11.west);
         \end{tikzpicture}
 
-        \item Matrix:\\
             $\begin{bNiceMatrix}[first-row,first-col]
                & 1 & 2 & 6 & 7 & 11  \\
             1  & 1 & 0 & 0 & 1 & 0   \\ 
@@ -202,13 +209,15 @@ If so, identify the equivalence classes.
             \end{cases}$ \\
 
         \item \begin{itemize}
-            \item R is reflexive as the diagnol of the matrix consist on only 1's.
-            \item R is symmetric as since $\forall$ $m$ and $n$, (m,n) and (n,m) are 1's.
-            \item R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ 
+            \item R is reflexive as the diagnol consist of only 1's. R is symmetric R is symmetric as since $\forall$ m and n, (m, n) and (n, m) are 1s. For example, in this set, 
+            there exists elements (1, 7) and (2,11) in order for the set to be symmetrical, there has to exist elements (7, 1) and (11, 2) and because those elements exist in the set R,
+             we are to claim that set R is symmetrical as this thought process can be applied to all elements of set R..R is transitive as $\forall$ $m$ and $n \in R$, if $mRn$ and $nRm$ 
             then $mRm$ and $nRn$.
         \end{itemize}
-        \item R is an equivalence relation since it is reflexive, symmetric, and transitive for 
-        the reasons mentioned above. The equivalence class for R is 
+        \item R is an equivalence relation since it is reflexive, symmetric, and transitive. The equivalence class for R are: 
+            \begin{itemize}
+                \item $[1] = {1, 7}$ $[2] = {2, 11}$ $[6] = {6}$
+            \end{itemize}    
     \end{multicols}
 \end{itemize}
 
@@ -232,7 +241,7 @@ If so, identify the equivalence classes.
                 $\Rightarrow$ Now, $A - A$ = $\emptyset$\\
                 $\Rightarrow$ $\left\lvert A - A\right\rvert$ = 0 $\neq 1$\\
                 $\Rightarrow$ $A \nsim A$.\\
-                Since the choice of set A is completely arbritiary, we can say that set $A$ is 
+                Since the choice of relation A is completely arbritiary, we can say that relation $A$ is 
                 $\textbf{anit-reflexive.}$\\
 
             \item Let $A$ = \{a\}, $B$ = $\emptyset$ and $A,B \in P(X)$:\\
@@ -241,7 +250,7 @@ If so, identify the equivalence classes.
                 $\Rightarrow$ From this we can say that $A \sim B$ but $B \nsim A$\\
                 This results in the conclusion that the relation is $\textbf{not symmetric}$.\\
 
-            \item Let $A$ = \{a,b\}, $B$ = \{b,a\} and $A,B \in P(X)$:\\
+            \item Let $A$ = \{a,b\}, $B$ = \{a,b\} and $A,B \in P(X)$:\\
                 $\Rightarrow$ $A-B$ = \{a\} and $B-A$ = \{c\} \\
                 $\Rightarrow$ $\left\lvert A - B\right\rvert$ = 1 and $\left\lvert B - A\right\rvert$ = 1\\
                 $\Rightarrow$ From this we can say that $A \sim B$ and $B \sim A$ but $A \neq B$\\
@@ -258,7 +267,8 @@ If so, identify the equivalence classes.
     In short, the relation is :
     \begin{itemize}
         \item $\textbf{antireflexive}$
-        \item $\textbf{neither symmetric and anti-symmetric}$
+        \item $\textbf{not symmetric}$
+        \item $\textbf{not anti-symmetric}$
         \item $\textbf{not transitive}$
     \end{itemize}
     
@@ -269,9 +279,9 @@ If so, identify the equivalence classes.
         \begin{enumerate}
             \item Since every element of a set $A$ is contained in itself, $A \sim A$ $\forall A$
             and it makes the relation $\textbf{reflexive}$\\
-            \item Let $A \sim B$ and $B \sim A$. Here as per definition, every element of $A \in B$ 
-            and  $B \in A$ also however $A \neq B$. \\$\therefore$ The relation is $\textbf{antisymmetric}$.\\
-            \item  Let $A \sim B$ and $B \sim C$, then it means that $A \in B$ and $B \in C$. That automatically puts 
+            \item Let $A \sim B$ and $B \sim A$. Here as per definition, every element of $A \subseteq B$ 
+            and  $B \subseteq A$ also however $A \neq B$. \\$\therefore$ The relation is $\textbf{antisymmetric}$.\\
+            \item  Let $A \sim B$ and $B \sim C$, then it means that $A \subseteq  B$ and $B \subseteq C$. That automatically puts 
             every element of A inside C. So $A \sim C$ and hence the relation is $\textbf{transitive}$.\\
         \end{enumerate}
         In short, the relation is :
@@ -282,6 +292,7 @@ If so, identify the equivalence classes.
     \end{itemize}
     \end{enumerate}
 \end{multicols}
+
 \pagebreak %-------------------------------------------------------------------------------------------
 
 %question 3
@@ -314,11 +325,11 @@ the requirements.
     \begin{itemize}
         \item Reflexive:\\Let $n = m$ and $q = p$. Then $(m,m) \in \Z^+\times\Z^+$ iff $mp = mp$\\$\therefore$ $\textbf{Reflexivity holds.}$\\
         \item Symmetric:\\Let $(m,n)$ and $(p,q)$ are related then it implies $(p,q)$ and $(m,n)$ are related.\\Assume that $(m,n) \varpropto (p,q)$,
-        this says that $mq = np$ and can be rewritten as $qm = pn$. Based on comunitive properties, $qm = pn$ can be rewritten as well as $pn = mq$ 
+        this says that $mq = np$ and can be rewritten as $qm = pn$. Based on commutative properties, $qm = pn$ can be rewritten as well as $pn = mq$ 
         which shows that $\textbf{symmetry holds}$.\\
         \item Transitive:\\ Let $(a,b), (c,d) \in \Z^+\times\Z^+$ and $(c,d), (e,f) \in \Z^+\times\Z^+$. This says that:\\ $(a,b), (c,d)$ is (ad) = (bc) and $(c,d), (e,f)$ is (cf) = (de)\\
         Multipling the equations, we get: (ad)(cf) = (bc)(de)\\
-        Rearranging the values via comunitive properties: (af)(cd) = (be)(cd)\\
+        Rearranging the values via commutative properties: (af)(cd) = (be)(cd)\\
         Divide by (cd), we obtain (af) = (be) and since $(a,b), (e,f) \in \Z^+\times\Z^+$, this proves 
         that the relation is $\textbf{transitive}$.
     \end{itemize}
