@@ -1,7 +1,7 @@
 timescale 1ns/1ps
 
 module EX3 (go,done,min,sum,Clk,Rst);
-    input go, CLK, Rst;
+    input go, Clk, Rst;
     output reg done;
     output reg [8:0] min, sum;
 
