@@ -10,8 +10,6 @@ def search_Song(song):
     clientID = '7186ac6407f64a74866f14e9c5bb5ac8'
     clientSecret = '28b29062ab134e2bad1e92803e8173e4'
     redirectURI = 'http://google.com/'
-
-    on = True
     
     # Create OAuth Object
     oauth_object = spotipy.SpotifyOAuth(clientID,clientSecret,redirectURI)
@@ -27,11 +25,10 @@ def search_Song(song):
     # To print the response in readable format.
     print(json.dumps(user,sort_keys=True, indent=4))
 
-    searchQuery = song
     
     while on:
             # Search for the Song.
-            searchResults = spotifyObject.search(searchQuery,1,0,"track")
+            searchResults = spotifyObject.search("Mercy",1,0,"track")
             # Get required data from JSON response.
             tracks_dict = searchResults['tracks']
             tracks_items = tracks_dict['items']

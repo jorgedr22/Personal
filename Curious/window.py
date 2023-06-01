@@ -284,7 +284,7 @@ s1 = Wordle()
 global letters_guess
 letters_guess = "_ _ _ _ _"
 
-with open("words.txt","r+") as k:
+with open("words.txt","r") as k:
         words = k.read()
 
 s1.rand = 6 * (random.randint(0,5757))
