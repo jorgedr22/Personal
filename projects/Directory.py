@@ -14,23 +14,23 @@ def main():
     Address = StringVar(Directory,value="")
     Mailing = StringVar(Directory,value="")
     
-    def Update():
+    def Update_Dict(): # change/update the info of a contact
         add.destroy()
         delete.destroy()
         update.destroy()
         
-    def Delete():
+    def Delete(): # deleting a contacts information
         add.destroy()
         delete.destroy()
         update.destroy()
         
-    def Add():
+    def Add(): # add new contact
         add.destroy()
         delete.destroy()
         update.destroy()
         var1 = tkinter.IntVar()
                     
-        def entry():
+        def entry(): # checks checkbox's condition for enabling inputs
             if var1.get() == 1:
                 mailing.delete(0,END)
                 mailing.update()
@@ -39,7 +39,7 @@ def main():
                 mailing.config(state="normal")
                 mailing.update()      
                       
-        def next_wind():     
+        def next_wind(): # makes sure if the information being added is correct and allows user to correct anything     
             instruct.config(text="Is the information below correct? If so, press confirm for it to be added to the directory.")
             
             if var1.get() == 1:    
@@ -65,27 +65,33 @@ def main():
             cancel = Button(Directory,text="Back",command=restart_program)
             cancel.pack(side=tkinter.BOTTOM)
             
-        def Check():
-            instruct1 = Label(Directory,text="Please enter a first and last name")
-            instruct2 = Label(Directory,text="Please enter an Address")
-            instruct3 = Label(Directory,text="Please enter a Mailing Address")
+        def Check(): #checks if the boxes are empty 
+            instruct1 = Label(Directory,text="")
+            instruct1.pack()
+            instruct2 = Label(Directory,text="")
+            instruct2.pack()
+            instruct3 = Label(Directory,text="")
+            instruct3.pack()
             
             if Name.get() == "":
-                instruct1.pack()
+                instruct1.config(text="Please enter a name")
             elif Name.get() != "":
-                instruct1.config(text="")
+                add_name = instruct1.get() # add a way to capture the contacts name, address, and mailing address
+                
                 
             if Address.get() == "":
-                instruct2.pack()
+                instruct2.config(text="Please enter an Address")
             elif Address.get() != "":
-                instruct2.config(text="")
+                instruct2.destroy()
+                
                 
             if Mailing.get() == "" and var1.get() == 0:
-                instruct3.pack()
+                instruct3.config(text="Please enter a Mailing Address")
             elif Mailing.get() != "" and var1.get() == 0:
-                instruct3.config(text="")
+                instruct3.destroy()
                 
-        def Confirm():
+
+        def Confirm(): # adds info to directory file
             if var1.get() == 0:
                 with open("directory.txt","a") as f:
                     f.write("Name: " + Name.get() + "\n")
@@ -138,7 +144,7 @@ def main():
     delete = Button(Directory,text="Delete Contact",command=Delete)
     delete.pack(side=tkinter.BOTTOM) 
     
-    update = Button(Directory,text="Update Contact",command=Update)
+    update = Button(Directory,text="Update Contact",command=Update_Dict)
     update.pack(side=tkinter.BOTTOM)
     
     add = Button(Directory,text="Add New Contact",command=Add)
@@ -153,7 +159,7 @@ if __name__ == "__main__":
     #create GUI with title    
     Directory = Tk()
     Directory.title("Directory")
-    Directory.geometry("750x750")
+    Directory.geometry("250x250")
 
     main()
             
